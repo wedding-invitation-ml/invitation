@@ -1,1 +1,667 @@
 
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Լևոն & Մերի | Հարսանեկան հրավեր</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8f6f1;
+  --paper: #fffefa;
+  --gold: #aa916d;
+  --text: #454139;
+  --muted: #898174;
+  --line: #ded5c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif Armenian', serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(248,246,241,.43), rgba(248,246,241,.65)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85')
+    center/cover no-repeat;
+}
+
+.hero-frame {
+  width: min(680px, 100%);
+  padding: 65px 25px;
+  background: rgba(255,254,250,.82);
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(170,145,109,.4);
+  outline-offset: 8px;
+}
+
+.small-title {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 8vw, 75px);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.ampersand {
+  color: var(--gold);
+  font-size: .75em;
+  padding: 0 10px;
+}
+
+.hero-date {
+  margin-top: 25px;
+  font-size: 17px;
+  letter-spacing: 4px;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.gold-line {
+  width: 55px;
+  height: 1px;
+  background: var(--gold);
+  margin: 30px auto;
+}
+
+.discover {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 1px solid var(--gold);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.discover:hover {
+  background: var(--gold);
+  color: white;
+}
+
+/* COMMON SECTIONS */
+
+section {
+  padding: 90px 22px;
+  text-align: center;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: clamp(27px, 5vw, 40px);
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.description {
+  max-width: 570px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  background: var(--paper);
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.countdown-item {
+  min-width: 75px;
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 35px;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.countdown-item small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* PHOTO */
+
+.photo-section {
+  padding: 0;
+}
+
+.photo-section img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* INVITATION */
+
+.invitation {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.invitation h2 {
+  font-size: clamp(27px, 5vw, 39px);
+}
+
+.invitation .description {
+  max-width: 540px;
+}
+
+/* EVENT DETAILS */
+
+.events {
+  background: var(--paper);
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 850px;
+  margin: 55px auto 0;
+  gap: 35px;
+}
+
+.event-card {
+  padding: 40px 25px;
+  border: 1px solid var(--line);
+}
+
+.event-time {
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.event-card h3 {
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.event-card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* RSVP */
+
+.rsvp {
+  background: var(--bg);
+}
+
+.rsvp-container {
+  max-width: 620px;
+  margin: 45px auto 0;
+  padding: 45px 35px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.form-intro {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
+.form-group {
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  outline: none;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+}
+
+.form-group input::placeholder {
+  color: #b2aa9e;
+}
+
+.attendance {
+  margin: 30px 0;
+}
+
+.attendance > p {
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.radio-option input {
+  accent-color: var(--gold);
+  width: 16px;
+  height: 16px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 35px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.submit-button:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 50px 20px;
+  text-align: center;
+  background: #eee9df;
+}
+
+footer h2 {
+  font-size: 30px;
+  color: var(--gold);
+  margin: 0;
+}
+
+footer p {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* MUSIC */
+
+.music {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 20;
+}
+
+.music audio {
+  width: 190px;
+  height: 35px;
+  opacity: .85;
+}
+
+/* MOBILE */
+
+@media(max-width: 650px) {
+  .hero {
+    min-height: 90svh;
+    padding: 35px 20px;
+  }
+
+  .hero-frame {
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(33px, 9vw, 48px);
+  }
+
+  .hero-date {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  .countdown-grid {
+    gap: 15px;
+  }
+
+  .countdown-item {
+    min-width: 58px;
+  }
+
+  .countdown-item span {
+    font-size: 28px;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-section img {
+    height: 320px;
+  }
+
+  .rsvp-container {
+    padding: 30px 20px;
+  }
+
+  .music {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .music audio {
+    width: 150px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="hero-frame">
+    <p class="small-title">ՍԻՐՈՎ ՀՐԱՎԻՐՈՒՄ ԵՆՔ</p>
+
+    <h1>
+      Լևոն <span class="ampersand">&</span> Մերի
+    </h1>
+
+    <div class="gold-line"></div>
+
+    <p class="hero-date">06 . 12 . 2026</p>
+
+    <p class="hero-subtitle">ՄԵՐ ՀԱՐՍԱՆԻՔԸ</p>
+
+    <a href="#invitation" class="discover">
+      ՄԵՐ ՄԱՍԻՆ
+    </a>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+  <p class="section-label">ՄԵՐ ՀԱՏՈՒԿ ՕՐԸ</p>
+  <h2>Մինչև մեր հանդիպումը</h2>
+
+  <div class="gold-line"></div>
+
+  <div class="countdown-grid">
+    <div class="countdown-item">
+      <span>—</span>
+      <small>ՕՐ</small>
+    </div>
+
+    <div class="countdown-item">
+      <span>—</span>
+      <small>ԺԱՄ</small>
+    </div>
+
+    <div class="countdown-item">
+      <span>—</span>
+      <small>ՐՈՊԵ</small>
+    </div>
+
+    <div class="countdown-item">
+      <span>—</span>
+      <small>ՎԱՅՐԿՅԱՆ</small>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO -->
+
+<div class="photo-section">
+  <img
+    src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85"
+    alt="Հարսանեկան լուսանկար"
+  >
+</div>
+
+<!-- INVITATION -->
+
+<section class="invitation" id="invitation">
+  <p class="section-label">ՄԵՐ ՍԻՐԵԼԻՆԵՐԻՆ</p>
+
+  <h2>Սիրելի՛ հյուրեր</h2>
+
+  <div class="gold-line"></div>
+
+  <p class="description">
+    Մեր կյանքի ամենակարևոր ու գեղեցիկ օրերից մեկը
+    ցանկանում ենք կիսել մեզ համար թանկ մարդկանց հետ։
+    <br><br>
+    Ուրախ կլինենք, եթե լինեք մեզ հետ և միասին
+    տոնենք մեր նոր ընտանիքի ստեղծումը։
+  </p>
+</section>
+
+<!-- EVENT DETAILS -->
+
+<section class="events">
+  <p class="section-label">ՕՐՎԱ ԾՐԱԳԻՐԸ</p>
+  <h2>Սպասում ենք Ձեզ</h2>
+
+  <div class="event-grid">
+
+    <div class="event-card">
+      <p class="event-time">14:00</p>
+      <h3>Պսակադրություն</h3>
+      <p>Եկեղեցու անվանումը</p>
+      <p>Եկեղեցու հասցեն</p>
+    </div>
+
+    <div class="event-card">
+      <p class="event-time">17:00</p>
+      <h3>Հարսանեկան խնջույք</h3>
+      <p>Ռեստորանի անվանումը</p>
+      <p>Ռեստորանի հասցեն</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RSVP -->
+
+<section class="rsvp">
+  <p class="section-label">ԽՆԴՐՈՒՄ ԵՆՔ ՀԱՍՏԱՏԵԼ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ</p>
+
+  <h2>Կլինե՞ք մեզ հետ</h2>
+
+  <p class="description">
+    Խնդրում ենք լրացնել հրավերի հաստատման ձևը։
+  </p>
+
+  <div class="rsvp-container">
+
+    <p class="form-intro">
+      Սիրով սպասում ենք Ձեր պատասխանին։
+    </p>
+
+    <form action="mailto:YOUR_EMAIL@example.com"
+          method="post"
+          enctype="text/plain">
+
+      <div class="form-group">
+        <label for="invitation-place">Հրավերի վայրը / սեղանի համարը</label>
+        <input
+          type="text"
+          id="invitation-place"
+          name="Հրավերի վայրը"
+          placeholder="Լրացրեք այստեղ"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="name">Անուն</label>
+        <input
+          type="text"
+          id="name"
+          name="Անուն"
+          placeholder="Ձեր անունը"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Ազգանուն</label>
+        <input
+          type="text"
+          id="surname"
+          name="Ազգանուն"
+          placeholder="Ձեր ազգանունը"
+          required
+        >
+      </div>
+
+      <div class="attendance">
+        <p>Կկարողանա՞ք ներկա գտնվել</p>
+
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="Ներկայություն"
+            value="Այո, սիրով կլինեմ"
+            required
+          >
+          Այո՛, սիրով կլինեմ
+        </label>
+
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="Ներկայություն"
+            value="Ցավոք, չեմ կարող"
+          >
+          Ցավոք, չեմ կարող
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Հյուրերի քանակը</label>
+        <select id="guests" name="Հյուրերի քանակը" required>
+          <option value="">Ընտրեք քանակը</option>
+          <option value="1">1 հյուր</option>
+          <option value="2">2 հյուր</option>
+          <option value="3">3 հյուր</option>
+          <option value="4">4 հյուր</option>
+          <option value="5">5 հյուր</option>
+          <option value="6">6 և ավելի</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="invited-by">Ու՞մ կողմից եք հրավիրված</label>
+        <input
+          type="text"
+          id="invited-by"
+          name="Հրավիրող"
+          placeholder="Նշեք հրավիրողի անունը"
+        >
+      </div>
+
+      <button type="submit" class="submit-button">
+        ՈՒՂԱՐԿԵԼ ՊԱՏԱՍԽԱՆԸ
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <h2>Լևոն & Մերի</h2>
+  <p>06 ԴԵԿՏԵՄԲԵՐԻ, 2026</p>
+  <p>ՍԻՐՈՎ՝ ՄԵՐ ԸՆՏԱՆԻՔԻՑ</p>
+</footer>
+
+<!-- MUSIC -->
+<div class="music">
+  <audio autoplay loop controls>
+    <source src="assets/une-vie-damour.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+</body>
+</html>
+
