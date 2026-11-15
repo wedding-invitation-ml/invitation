@@ -2,19 +2,23 @@
 <html lang="hy">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Levon & Mery | Wedding Invitation</title>
+<title>Levon & Mery | 06.12.2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Noto+Serif+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+
 
 <style>
 
-/* GENERAL */
+/* =====================================
+   GENERAL DESIGN
+===================================== */
 
 * {
     margin: 0;
@@ -23,601 +27,1327 @@
 }
 
 :root {
-    --background: #f7f4ef;
-    --dark: #34332f;
-    --gold: #a78c65;
-    --muted: #8b857b;
-    --line: #ded8ce;
-}
 
-body {
-    background: var(--background);
-    color: var(--dark);
-    font-family: 'Noto Serif Armenian', Georgia, serif;
-    font-weight: 300;
+    --ivory: #f8f4eb;
+    --cream: #eee5d6;
+    --champagne: #d7c4a5;
+    --gold: #a58a62;
+    --brown: #655748;
+    --dark: #40372f;
+    --muted: #968879;
+    --white: #fffdf8;
+
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-main {
-    overflow: hidden;
+body {
+
+    background: var(--ivory);
+    color: var(--dark);
+
+    font-family: 'Noto Serif Armenian', serif;
+    font-weight: 300;
+
+    overflow-x: hidden;
+
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .section {
-    width: min(760px, calc(100% - 40px));
+    width: min(850px, 90%);
     margin: auto;
     padding: 100px 0;
     text-align: center;
 }
 
 .eyebrow {
-    font-family: 'Manrope', sans-serif;
-    font-size: 10px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    text-transform: uppercase;
+
     letter-spacing: 4px;
+
+    font-size: 13px;
+
     color: var(--gold);
+
 }
 
-h1, h2, h3 {
-    font-weight: 300;
-}
-
-
-/* OPENING ENVELOPE */
-
-.intro {
-    min-height: 100vh;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #eeebe5;
-    padding: 30px 20px;
-}
-
-.envelope-toggle {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.envelope-scene {
-    position: relative;
-    width: min(340px, 85vw);
-    height: 250px;
-    perspective: 1000px;
-}
-
-.envelope {
-    position: absolute;
-    top: 70px;
-    width: 100%;
-    height: 180px;
-}
-
-.envelope-back {
-    position: absolute;
-    inset: 0;
-    background: #d9d0c4;
-}
-
-.envelope-front {
-    position: absolute;
-    inset: 0;
-    background: #e9e2d8;
-
-    clip-path: polygon(
-        0 0,
-        50% 62%,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
-}
-
-.envelope-flap {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 110px;
-    background: #e3dbd0;
-
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        50% 100%
-    );
-
-    transform-origin: top;
-    transition: transform 1s ease;
-    z-index: 4;
-}
-
-.wax-seal {
-    position: absolute;
-    top: 68px;
-    left: 50%;
-    transform: translateX(-50%);
+.gold-line {
 
     width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    height: 1px;
 
-    background: #9b8068;
-    color: white;
+    background: var(--gold);
+
+    margin: 25px auto;
+
+}
+
+.section-title {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(40px, 7vw, 65px);
+
+    color: var(--brown);
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================
+   OPENING SCREEN
+===================================== */
+
+.opening {
+
+    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
+
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    position: relative;
 
-    cursor: pointer;
-    z-index: 5;
-    box-shadow: 0 3px 10px #0002;
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 35%,
+            #f8f1e5 0%,
+            #e5d8c2 60%,
+            #c9b99e 100%
+        );
+
 }
 
-.wax-seal span {
-    font-size: 10px;
-}
+/* Vintage texture */
 
-.letter {
+.opening::before {
+
+    content: "";
+
     position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 12px;
 
-    height: 205px;
-    background: #fffdf9;
+    inset: 0;
 
-    text-align: center;
-    padding: 25px 15px;
+    opacity: .25;
+
+    pointer-events: none;
+
+    background-image:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.2) 1px,
+            transparent 3px
+        );
+
+}
+
+/* Decorative frame */
+
+.opening::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(255,255,255,.55);
+
+    pointer-events: none;
+
+}
+
+.opening-content {
+
+    position: relative;
 
     z-index: 2;
 
-    transition:
-        transform 1s ease .3s,
-        bottom 1s ease .3s;
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
 }
 
-.letter-inner h1 {
-    font-size: 20px;
-    margin: 12px 0;
+.opening-caption {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    color: #fffdf6;
+
+    margin-bottom: 18px;
+
+    text-shadow: 0 1px 5px #796c59;
+
 }
 
-.letter-inner p {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 2;
+.opening-names {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(55px, 11vw, 90px);
+
+    color: #fffdf8;
+
+    font-weight: 400;
+
+    text-shadow: 0 2px 10px #796c59;
+
+    margin-bottom: 30px;
+
 }
 
-.swan-mark {
-    color: var(--gold);
-    font-size: 30px;
-    margin: 8px;
+/* =====================================
+   ENVELOPE
+===================================== */
+
+.envelope-container {
+
+    width: min(390px, 85vw);
+
+    height: 290px;
+
+    position: relative;
+
+    perspective: 1200px;
+
+    margin: 5px auto 30px;
+
 }
 
-.open-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--gold);
-    font-size: 12px;
-    cursor: pointer;
+.envelope {
+
+    width: 100%;
+
+    height: 235px;
+
+    position: absolute;
+
+    bottom: 0;
+
 }
 
-.envelope-toggle:checked ~ .envelope-scene .envelope-flap {
-    transform: rotateX(180deg);
-    z-index: 1;
+/* Envelope body */
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #e9dfce
+        );
+
+    box-shadow:
+
+        0 15px 35px rgba(70,55,35,.17);
+
 }
 
-.envelope-toggle:checked ~ .envelope-scene .letter {
-    transform: translateY(-145px);
-    bottom: 30px;
+/* Front folds */
+
+.envelope-front {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #f3ecdf;
+
+    clip-path:
+
+        polygon(
+            0 0,
+            50% 58%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 3;
+
+}
+
+/* Side folds */
+
+.envelope-left {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #e8ddcc;
+
+    clip-path:
+
+        polygon(
+            0 0,
+            50% 58%,
+            0 100%
+        );
+
+    z-index: 2;
+
+}
+
+.envelope-right {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #eee4d5;
+
+    clip-path:
+
+        polygon(
+            100% 0,
+            50% 58%,
+            100% 100%
+        );
+
+    z-index: 2;
+
+}
+
+/* Lace decoration */
+
+.lace {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 125px;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background:
+
+        repeating-radial-gradient(
+            circle at 10px 10px,
+            transparent 0 4px,
+            rgba(255,255,255,.9) 5px 6px,
+            transparent 7px 10px
+        );
+
+    opacity: .8;
+
+    clip-path:
+
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+}
+
+/* Envelope flap */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 125px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #e9dfce
+        );
+
+    clip-path:
+
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin: top;
+
+    transition: transform 1s ease;
+
+    z-index: 5;
+
+}
+
+/* Wax seal */
+
+.wax-seal {
+
+    position: absolute;
+
+    top: 85px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #f9f4e9,
+            #cdbd9e
+        );
+
+    border: 3px double #b7a17d;
+
+    box-shadow:
+
+        0 3px 8px rgba(0,0,0,.18),
+        inset 0 2px 5px white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     z-index: 6;
+
+    cursor: pointer;
+
+    color: #9d8764;
+
+    font-size: 29px;
+
 }
 
-.intro-hint {
-    margin-top: 35px;
-    color: var(--muted);
-    font-size: 11px;
+/* Swan symbol */
+
+.swan-seal {
+
+    font-size: 30px;
+
+    line-height: 1;
+
+}
+
+/* Letter inside */
+
+.letter {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 7%;
+
+    width: 86%;
+
+    height: 190px;
+
+    background: #fffdf8;
+
+    z-index: 1;
+
+    transition:
+
+        transform 1s ease .4s;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.letter-content {
+
+    text-align: center;
+
+    padding: 15px;
+
+}
+
+.letter-content p {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--gold);
+
+    font-size: 17px;
+
+}
+
+.letter-content h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    color: var(--brown);
+
+}
+
+/* Open animation */
+
+.opening.opened .envelope-flap {
+
+    transform: rotateX(180deg);
+
+    z-index: 1;
+
+}
+
+.opening.opened .wax-seal {
+
+    opacity: 0;
+
+    transition: opacity .3s;
+
+}
+
+.opening.opened .letter {
+
+    transform: translateY(-150px);
+
+}
+
+.opening.opened {
+
+    animation: fadeOpening 1.3s forwards 1.5s;
+
+}
+
+@keyframes fadeOpening {
+
+    to {
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+    }
+
+}
+
+/* Opening button */
+
+.open-button {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 15px;
+
+    text-shadow: 0 1px 5px #796c59;
+
+    transition: .3s;
+
+}
+
+.open-button:hover {
+
+    letter-spacing: 4px;
+
 }
 
 
-/* MAIN INVITATION */
+/* =====================================
+   MAIN INVITATION
+===================================== */
+
+.invitation {
+
+    display: none;
+
+    opacity: 0;
+
+    animation: showInvitation 2s forwards;
+
+}
+
+.invitation.visible {
+
+    display: block;
+
+}
+
+@keyframes showInvitation {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
 
 .hero {
-    padding-top: 120px;
+
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            #fffdf8,
+            #f0e8db
+        );
+
+    position: relative;
+
 }
 
-.ornament {
-    color: var(--gold);
-    font-size: 25px;
-    margin: 30px;
+.hero::before {
+
+    content: "❧";
+
+    font-size: 65px;
+
+    color: var(--champagne);
+
+    margin-bottom: 25px;
+
 }
 
-.couple-names {
-    font-size: clamp(38px, 8vw, 68px);
-    letter-spacing: -2px;
+.hero-names {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(65px, 12vw, 105px);
+
+    color: var(--brown);
+
+    font-weight: 400;
+
+    margin: 25px 0;
+
 }
 
-.couple-names span {
-    color: var(--gold);
-    font-size: .7em;
-    padding: 0 8px;
-}
+.hero-date {
 
-.date {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
     letter-spacing: 5px;
-    color: var(--muted);
-    margin: 30px 0;
+
+    color: var(--gold);
+
+    margin: 20px 0;
+
 }
 
-.invitation-line {
-    font-size: 14px;
-    line-height: 2;
+.hero-text {
+
+    font-size: 15px;
+
+    line-height: 2.2;
+
+    max-width: 500px;
+
+    color: var(--brown);
+
+    margin-top: 25px;
+
+}
+
+/* Decorative swan */
+
+.swan-decoration {
+
+    font-size: 55px;
+
+    color: var(--gold);
+
+    margin: 25px 0;
+
 }
 
 
-/* PHOTO GALLERY */
+/* =====================================
+   PHOTO GALLERY
+===================================== */
 
-.photo-gallery {
+.gallery {
+
+    background: #f4eee4;
+
+    padding: 100px 20px;
+
+}
+
+.gallery-grid {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
 
-    max-width: 720px;
-    margin: 60px auto 0;
+    gap: 15px;
+
+    max-width: 800px;
+
+    margin: 50px auto 0;
+
 }
 
-.photo-gallery figure {
+.gallery-item {
+
     overflow: hidden;
-    background: #dedbd5;
+
+    background: #e4ddd1;
+
 }
 
-.photo-gallery .photo-tall {
+.gallery-item.tall {
+
     grid-row: span 2;
+
 }
 
-.photo-gallery .photo-wide {
+.gallery-item.wide {
+
     grid-column: span 2;
+
 }
 
-.photo-gallery img {
-    display: block;
+.gallery-item img {
+
     width: 100%;
+
     height: 100%;
-    min-height: 220px;
+
+    min-height: 230px;
 
     object-fit: cover;
+
     filter: grayscale(100%);
 
-    transition: transform .7s ease;
+    transition: transform .8s;
+
 }
 
-.photo-gallery img:hover {
+.gallery-item img:hover {
+
     transform: scale(1.04);
+
 }
 
-.photo-gallery .photo-tall img {
-    min-height: 510px;
+.gallery-item.tall img {
+
+    min-height: 500px;
+
 }
 
-.photo-gallery .photo-wide img {
-    max-height: 390px;
+.gallery-item.wide img {
+
+    max-height: 400px;
+
 }
 
 
-/* COUNTDOWN */
+/* =====================================
+   COUNTDOWN
+===================================== */
 
 .countdown-section {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+
+    background: #eae0d1;
+
+    padding: 90px 20px;
+
 }
 
 .countdown {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    gap: 25px;
-    margin: 40px 0 20px;
+
+    gap: clamp(12px, 4vw, 35px);
+
+    margin: 45px auto;
+
 }
 
-.countdown div {
-    display: grid;
+.countdown-item {
+
+    display: flex;
+
+    flex-direction: column;
+
     gap: 10px;
+
 }
 
-.countdown strong {
-    font-family: 'Manrope', sans-serif;
-    font-size: 35px;
-    font-weight: 300;
+.countdown-item strong {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(30px, 7vw, 48px);
+
+    font-weight: 400;
+
+    color: var(--brown);
+
 }
 
-.countdown span {
-    color: var(--muted);
-    font-size: 11px;
-}
+.countdown-item span {
 
-.countdown i {
-    height: 35px;
-    width: 1px;
-    background: var(--line);
-}
-
-.small-note {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-
-/* WEDDING PROGRAM */
-
-.schedule {
-    max-width: 600px;
-    text-align: left;
-}
-
-.schedule h2 {
-    text-align: center;
-    font-size: 35px;
-    margin: 20px 0 40px;
-}
-
-.schedule > .eyebrow {
-    text-align: center;
-}
-
-.event-row {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 20px;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.event-time {
-    font-family: 'Manrope', sans-serif;
-    font-size: 23px;
-    color: var(--gold);
-}
-
-.event-row h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.event-row p {
-    font-size: 14px;
-    margin: 6px 0;
-}
-
-.event-row .address {
     font-size: 12px;
+
     color: var(--muted);
+
 }
 
-.event-divider {
-    text-align: center;
+.countdown-divider {
+
+    width: 1px;
+
+    height: 40px;
+
+    background: var(--gold);
+
+}
+
+
+/* =====================================
+   WEDDING PROGRAM
+===================================== */
+
+.program {
+
+    padding: 100px 20px;
+
+    background: var(--ivory);
+
+}
+
+.program-card {
+
+    max-width: 650px;
+
+    margin: 55px auto 0;
+
+    padding: 35px;
+
+    border: 1px solid #d9c9ad;
+
+    position: relative;
+
+}
+
+.program-card::before {
+
+    content: "✧";
+
+    position: absolute;
+
+    top: -15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ivory);
+
+    padding: 0 15px;
+
     color: var(--gold);
-    padding: 15px;
+
+    font-size: 23px;
+
+}
+
+.program-item {
+
+    padding: 30px 10px;
+
+}
+
+.program-time {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 34px;
+
+    color: var(--gold);
+
+}
+
+.program-item h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin: 12px 0;
+
+}
+
+.program-item p {
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    color: var(--brown);
+
+}
+
+.program-divider {
+
+    color: var(--gold);
+
+    font-size: 22px;
+
+}
+
+.map-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--brown);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .3s;
+
+}
+
+.map-button:hover {
+
+    background: var(--gold);
+
+    color: white;
+
 }
 
 
-/* RSVP */
+/* =====================================
+   RSVP
+===================================== */
 
 .rsvp {
-    width: 100%;
-    max-width: none;
-    background: #eeebe5;
 
-    padding: 100px max(20px, calc((100% - 560px)/2));
+    padding: 100px 20px;
+
+    background: #eee5d8;
+
 }
 
-.rsvp h2 {
-    font-size: 35px;
-    margin: 20px 0;
-}
+.rsvp-description {
 
-.rsvp-intro {
-    font-size: 13px;
+    max-width: 500px;
+
+    margin: 20px auto 40px;
+
+    font-size: 14px;
+
     line-height: 2;
-    color: var(--muted);
-    margin-bottom: 35px;
+
+    color: var(--brown);
+
 }
 
-form {
+.rsvp-form {
+
+    max-width: 550px;
+
+    margin: auto;
+
     display: grid;
+
     gap: 25px;
+
     text-align: left;
+
 }
 
-form label,
-legend {
-    font-size: 12px;
-    color: #625d55;
+.rsvp-form label {
+
+    font-size: 13px;
+
+    color: var(--brown);
+
 }
 
-.field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+.rsvp-form input,
 
-input[type="text"],
-select {
-    display: block;
+.rsvp-form select {
+
     width: 100%;
+
+    padding: 14px 5px;
 
     margin-top: 10px;
-    padding: 13px 2px;
-
-    border: none;
-    border-bottom: 1px solid #c9c1b5;
 
     background: transparent;
 
-    font-family: inherit;
-    font-size: 13px;
-    color: var(--dark);
+    border: none;
+
+    border-bottom: 1px solid #c7b79e;
 
     outline: none;
+
+    font-size: 14px;
+
+    color: var(--dark);
+
 }
 
-input:focus,
-select:focus {
+.rsvp-form input:focus,
+
+.rsvp-form select:focus {
+
     border-color: var(--gold);
+
 }
 
-fieldset {
-    border: none;
+.radio-group {
+
     display: grid;
-    gap: 15px;
-}
 
-legend {
-    margin-bottom: 15px;
+    gap: 15px;
+
 }
 
 .radio-option {
+
     display: flex;
+
     align-items: center;
-    gap: 10px;
+
+    gap: 12px;
+
+    font-size: 13px;
+
 }
 
-input[type="radio"] {
+.radio-option input {
+
+    width: auto;
+
     accent-color: var(--gold);
+
 }
 
-button {
-    padding: 17px;
+.rsvp-button {
 
-    background: var(--dark);
+    padding: 16px;
+
+    background: var(--brown);
+
+    border: 1px solid var(--brown);
+
     color: white;
 
-    border: 1px solid var(--dark);
-
-    font-family: inherit;
-    font-size: 13px;
+    font-size: 14px;
 
     cursor: pointer;
+
     transition: .3s;
+
 }
 
-button:hover {
+.rsvp-button:hover {
+
     background: transparent;
-    color: var(--dark);
+
+    color: var(--brown);
+
 }
 
-.form-note {
-    margin-top: 25px;
+.rsvp-message {
+
     text-align: center;
-    font-size: 10px;
-    color: var(--muted);
-}
 
-
-/* MUSIC */
-
-.music {
-    padding: 80px 20px;
-}
-
-.music p:not(.eyebrow) {
     font-size: 13px;
+
+    color: var(--gold);
+
+    display: none;
+
+    line-height: 2;
+
+}
+
+
+/* =====================================
+   MUSIC PLAYER
+===================================== */
+
+.music-section {
+
+    padding: 80px 20px;
+
+    background: #f8f4eb;
+
+}
+
+.music-text {
+
+    margin: 20px 0;
+
+    font-size: 14px;
+
     color: var(--muted);
-    margin-top: 20px;
+
 }
 
 audio {
-    width: min(360px, 100%);
-    margin-top: 25px;
+
+    width: min(350px, 100%);
+
+    margin-top: 20px;
+
 }
 
 
-/* FOOTER */
+/* =====================================
+   FOOTER
+===================================== */
 
-footer {
+.footer {
+
+    padding: 65px 20px;
+
     text-align: center;
-    padding: 50px 20px;
-    border-top: 1px solid var(--line);
+
+    background: #e8ddcd;
+
 }
 
 .footer-swan {
-    font-size: 35px;
+
+    font-size: 45px;
+
     color: var(--gold);
+
 }
 
-footer p {
+.footer-names {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 48px;
+
     margin: 15px 0;
-    font-size: 17px;
+
+    color: var(--brown);
+
 }
 
-footer span {
-    font-family: 'Manrope', sans-serif;
-    font-size: 11px;
+.footer-date {
+
+    font-family: 'Cormorant Garamond', serif;
+
     letter-spacing: 4px;
+
+    font-size: 14px;
+
     color: var(--muted);
+
 }
 
 
-/* MOBILE RESPONSIVE */
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
 
     .section {
+
         padding: 75px 0;
+
     }
 
-    .hero {
-        padding-top: 85px;
+    .opening-names {
+
+        font-size: 60px;
+
     }
 
-    .photo-gallery {
+    .envelope-container {
+
+        width: 85vw;
+
+        height: 260px;
+
+    }
+
+    .envelope {
+
+        height: 210px;
+
+    }
+
+    .envelope-flap {
+
+        height: 110px;
+
+    }
+
+    .wax-seal {
+
+        top: 75px;
+
+        width: 58px;
+
+        height: 58px;
+
+    }
+
+    .gallery-grid {
+
         gap: 8px;
-        margin-top: 40px;
+
     }
 
-    .photo-gallery img {
+    .gallery-item img {
+
         min-height: 150px;
+
     }
 
-    .photo-gallery .photo-tall img {
-        min-height: 308px;
+    .gallery-item.tall img {
+
+        min-height: 310px;
+
     }
 
-    .photo-gallery .photo-wide img {
-        max-height: 250px;
+    .gallery-item.wide img {
+
+        max-height: 260px;
+
+    }
+
+    .program-card {
+
+        padding: 25px 15px;
+
     }
 
     .countdown {
+
         gap: 10px;
+
     }
 
-    .countdown strong {
-        font-size: 23px;
+    .countdown-item strong {
+
+        font-size: 28px;
+
     }
 
-    .countdown i {
+    .countdown-item span {
+
+        font-size: 10px;
+
+    }
+
+    .countdown-divider {
+
         height: 25px;
-    }
 
-    .event-row {
-        grid-template-columns: 75px 1fr;
-        gap: 12px;
-    }
-
-    .event-time {
-        font-size: 19px;
-    }
-
-    .field-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
     }
 
 }
@@ -629,377 +1359,762 @@ footer span {
 
 <body>
 
-<main>
+
+<!-- =====================================
+     OPENING SCREEN
+===================================== -->
+
+<section class="opening" id="opening">
+
+    <div class="opening-content">
+
+        <p class="opening-caption">
+            A LOVE LETTER TO FOREVER
+        </p>
+
+        <h1 class="opening-names">
+            Levon & Mery
+        </h1>
 
 
-<!-- OPENING LETTER -->
+        <div class="envelope-container" id="envelope">
 
-<section class="intro">
+            <div class="letter">
 
-<input type="checkbox" id="open-letter" class="envelope-toggle">
+                <div class="letter-content">
 
-<div class="envelope-scene">
+                    <p>Մեր սիրո պատմությունը</p>
 
-    <div class="letter">
+                    <h2>Լևոն & Մերի</h2>
 
-        <div class="letter-inner">
+                    <p>06 . 12 . 2026</p>
 
-            <span class="eyebrow">
-                ՄԵՐ ՍԻՐՈ ՊԱՏՄՈՒԹՅՈՒՆԸ
-            </span>
+                </div>
 
-            <div class="swan-mark">♡</div>
+            </div>
 
-            <h1>Սիրով հրավիրում ենք</h1>
 
-            <p>
-                Մի գեղեցիկ օր՝ մեր կյանքի նոր պատմության սկիզբը։
-            </p>
+            <div class="envelope">
 
-            <label for="open-letter" class="open-link">
-                Բացել հրավերը ↓
-            </label>
+                <div class="envelope-back"></div>
+
+                <div class="envelope-left"></div>
+
+                <div class="envelope-right"></div>
+
+                <div class="envelope-front"></div>
+
+                <div class="lace"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="wax-seal">
+
+                    <span class="swan-seal">🦢</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="open-button" id="openButton">
+
+            OPEN THE INVITATION
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MAIN INVITATION
+===================================== -->
+
+<main class="invitation" id="invitation">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <p class="eyebrow">
+        WITH LOVE AND JOY
+    </p>
+
+    <div class="swan-decoration">
+        🦢
+    </div>
+
+    <h1 class="hero-names">
+        Levon & Mery
+    </h1>
+
+    <div class="gold-line"></div>
+
+    <p class="hero-date">
+        06 . 12 . 2026
+    </p>
+
+    <p class="hero-text">
+
+        Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու
+        մեր կյանքի ամենակարևոր օրվան։
+
+        <br><br>
+
+        Ուրախ կլինենք այս գեղեցիկ օրը
+        կիսել Ձեզ հետ։
+
+    </p>
+
+</section>
+
+
+
+<!-- PHOTO GALLERY -->
+
+<section class="gallery section">
+
+    <p class="eyebrow">
+        OUR STORY
+    </p>
+
+    <h2 class="section-title">
+        Moments of Love
+    </h2>
+
+    <div class="gold-line"></div>
+
+
+    <div class="gallery-grid">
+
+        <figure class="gallery-item tall">
+
+            <img src="photo-01.jpg" alt="Levon and Mery">
+
+        </figure>
+
+
+        <figure class="gallery-item wide">
+
+            <img src="photo-02.jpg" alt="Levon and Mery">
+
+        </figure>
+
+
+        <figure class="gallery-item">
+
+            <img src="photo-03.jpg" alt="Levon and Mery">
+
+        </figure>
+
+
+        <figure class="gallery-item">
+
+            <img src="photo-04.jpg" alt="Our engagement">
+
+        </figure>
+
+
+        <figure class="gallery-item wide">
+
+            <img src="photo-05.jpg" alt="Levon and Mery">
+
+        </figure>
+
+    </div>
+
+</section>
+
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+    <p class="eyebrow">
+        THE COUNTDOWN BEGINS
+    </p>
+
+    <h2 class="section-title">
+        Until Forever
+    </h2>
+
+
+    <div class="countdown" id="countdown">
+
+        <div class="countdown-item">
+
+            <strong id="days">00</strong>
+
+            <span>ՕՐ</span>
+
+        </div>
+
+
+        <div class="countdown-divider"></div>
+
+
+        <div class="countdown-item">
+
+            <strong id="hours">00</strong>
+
+            <span>ԺԱՄ</span>
+
+        </div>
+
+
+        <div class="countdown-divider"></div>
+
+
+        <div class="countdown-item">
+
+            <strong id="minutes">00</strong>
+
+            <span>ՐՈՊԵ</span>
+
+        </div>
+
+
+        <div class="countdown-divider"></div>
+
+
+        <div class="countdown-item">
+
+            <strong id="seconds">00</strong>
+
+            <span>ՎԱՅՐԿՅԱՆ</span>
 
         </div>
 
     </div>
 
-
-    <div class="envelope">
-
-        <div class="envelope-back"></div>
-        <div class="envelope-front"></div>
-        <div class="envelope-flap"></div>
-
-        <label for="open-letter" class="wax-seal">
-            L <span>&</span> M
-        </label>
-
-    </div>
-
-</div>
-
-<p class="intro-hint">
-    Սեղմեք կնիքին՝ հրավերը բացելու համար
-</p>
-
 </section>
 
-
-<!-- SAVE THE DATE -->
-
-<section class="hero section">
-
-<p class="eyebrow">SAVE THE DATE</p>
-
-<div class="ornament">✧</div>
-
-<h2 class="couple-names">
-    Լևոն <span>&</span> Մերի
-</h2>
-
-<p class="date">
-    06 . 12 . 2026
-</p>
-
-<p class="invitation-line">
-    Ուրախ կլինենք այս կարևոր օրը կիսել Ձեզ հետ։
-</p>
-
-
-<!-- YOUR PHOTOGRAPHS -->
-
-<div class="photo-gallery">
-
-    <figure class="photo-tall">
-        <img src="photo-01.jpg" alt="Levon and Mery">
-    </figure>
-
-    <figure class="photo-wide">
-        <img src="photo-02.jpg" alt="Levon and Mery">
-    </figure>
-
-    <figure>
-        <img src="photo-03.jpg" alt="Levon and Mery">
-    </figure>
-
-    <figure>
-        <img src="photo-04.jpg" alt="Engagement ring">
-    </figure>
-
-    <figure class="photo-wide">
-        <img src="photo-05.jpg" alt="Levon and Mery">
-    </figure>
-
-</div>
-
-</section>
-
-
-<!-- COUNTDOWN -->
-
-<section class="countdown-section section">
-
-<p class="eyebrow">ՄԻՆՉԵՎ ՄԵՐ ՕՐԸ</p>
-
-<div class="countdown">
-
-    <div>
-        <strong>00</strong>
-        <span>օր</span>
-    </div>
-
-    <i></i>
-
-    <div>
-        <strong>00</strong>
-        <span>ժամ</span>
-    </div>
-
-    <i></i>
-
-    <div>
-        <strong>00</strong>
-        <span>րոպե</span>
-    </div>
-
-    <i></i>
-
-    <div>
-        <strong>00</strong>
-        <span>վայրկյան</span>
-    </div>
-
-</div>
-
-<p class="small-note">
-    Մեր հանդիպմանը մնացած ժամանակը
-</p>
-
-</section>
 
 
 <!-- WEDDING PROGRAM -->
 
-<section class="schedule section">
+<section class="program">
 
-<p class="eyebrow">ՕՐՎԱ ԾՐԱԳԻՐԸ</p>
+    <p class="eyebrow">
+        OUR SPECIAL DAY
+    </p>
 
-<h2>Կսպասենք Ձեզ</h2>
+    <h2 class="section-title">
+        Օրվա ծրագիրը
+    </h2>
 
 
-<div class="event-row">
+    <div class="program-card">
 
-    <span class="event-time">14:00</span>
 
-    <div>
+        <!-- CHURCH -->
 
-        <h3>Պսակադրություն</h3>
+        <div class="program-item">
 
-        <p>Եկեղեցու անվանումը</p>
+            <p class="program-time">
+                14:00
+            </p>
 
-        <p class="address">
-            Հասցեն՝ լրացվելու է
-        </p>
+            <h3>
+                Պսակադրություն
+            </h3>
+
+            <p>
+                Մեղրիի Սուրբ Հովհաննես եկեղեցի
+            </p>
+
+            <p>
+                ք. Մեղրի, Փոքր թաղ
+            </p>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Meghri+Saint+Hovhannes+Church+Armenia"
+                target="_blank"
+                class="map-button">
+
+                Ինչպես հասնել
+
+            </a>
+
+        </div>
+
+
+        <div class="program-divider">
+            ✧
+        </div>
+
+
+        <!-- RESTAURANT -->
+
+        <div class="program-item">
+
+            <p class="program-time">
+                17:00
+            </p>
+
+            <h3>
+                Տոնական խնջույք
+            </h3>
+
+            <p>
+                «Մարիշոկ» ռեստորան
+            </p>
+
+            <p>
+                ք. Ագարակ
+            </p>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Marishok+Restaurant+Aragats? "
+                target="_blank"
+                class="map-button">
+
+                Ինչպես հասնել
+
+            </a>
+
+        </div>
 
     </div>
-
-</div>
-
-
-<div class="event-divider">✧</div>
-
-
-<div class="event-row">
-
-    <span class="event-time">17:00</span>
-
-    <div>
-
-        <h3>Հարսանեկան խնջույք</h3>
-
-        <p>Ռեստորանի անվանումը</p>
-
-        <p class="address">
-            Հասցեն՝ լրացվելու է
-        </p>
-
-    </div>
-
-</div>
 
 </section>
+
 
 
 <!-- RSVP -->
 
-<section class="rsvp section">
+<section class="rsvp">
 
-<p class="eyebrow">RSVP</p>
+    <p class="eyebrow">
+        RSVP
+    </p>
 
-<h2>Կհանդիպե՞նք</h2>
+    <h2 class="section-title">
+        Կհանդիպե՞նք
+    </h2>
 
-<p class="rsvp-intro">
-    Ուրախ կլինենք իմանալ՝ կկարողանա՞ք
-    միանալ մեզ այս գեղեցիկ օրը։
-</p>
+    <div class="gold-line"></div>
 
+    <p class="rsvp-description">
 
-<form action="#" method="post">
+        Մեր ուրախությունն ամբողջական կլինի,
+        եթե այս օրը լինեք մեզ հետ։
 
+        <br>
 
-<div class="field-row">
+        Խնդրում ենք հաստատել Ձեր մասնակցությունը։
 
-    <label>
-        Անուն
-
-        <input
-            type="text"
-            name="first_name"
-            placeholder="Ձեր անունը"
-            required
-        >
-    </label>
+    </p>
 
 
-    <label>
-        Ազգանուն
-
-        <input
-            type="text"
-            name="last_name"
-            placeholder="Ձեր ազգանունը"
-            required
-        >
-    </label>
-
-</div>
+    <form class="rsvp-form" id="rsvpForm">
 
 
-<fieldset>
+        <label>
 
-    <legend>Կմիանա՞ք մեզ</legend>
+            Անուն
 
-    <label class="radio-option">
+            <input
+                type="text"
+                name="firstName"
+                placeholder="Ձեր անունը"
+                required
+            >
 
-        <input
-            type="radio"
-            name="attendance"
-            value="yes"
-            required
-        >
-
-        Այո՛, սիրով ներկա կլինեմ
-
-    </label>
+        </label>
 
 
-    <label class="radio-option">
+        <label>
 
-        <input
-            type="radio"
-            name="attendance"
-            value="no"
-        >
+            Ազգանուն
 
-        Ցավոք, չեմ կարողանա
+            <input
+                type="text"
+                name="lastName"
+                placeholder="Ձեր ազգանունը"
+                required
+            >
 
-    </label>
-
-</fieldset>
-
-
-<label>
-
-    Հյուրերի քանակը
-
-    <select name="guests">
-
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-
-    </select>
-
-</label>
+        </label>
 
 
-<label>
+        <div class="radio-group">
 
-    Ո՞ւմ կողմից եք հրավիրված
-
-    <select name="invited_by">
-
-        <option value="">Ընտրել</option>
-
-        <option value="Levon">
-            Լևոնի կողմից
-        </option>
-
-        <option value="Mery">
-            Մերիի կողմից
-        </option>
-
-        <option value="Both">
-            Երկուսիս կողմից
-        </option>
-
-    </select>
-
-</label>
+            <p>Կկարողանա՞ք ներկա գտնվել</p>
 
 
-<button type="submit">
-    Ուղարկել պատասխանը
-</button>
+            <label class="radio-option">
+
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Այո, սիրով ներկա կլինեմ"
+                    required
+                >
+
+                Այո՛, սիրով ներկա կլինեմ
+
+            </label>
 
 
-</form>
+            <label class="radio-option">
 
-<p class="form-note">
-    Շնորհակալ ենք Ձեր պատասխանի համար։
-</p>
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Ցավոք, չեմ կարողանա"
+                >
+
+                Ցավոք, չեմ կարողանա
+
+            </label>
+
+        </div>
+
+
+        <label>
+
+            Հյուրերի քանակը
+
+            <select name="guests">
+
+                <option value="1">1</option>
+
+                <option value="2">2</option>
+
+                <option value="3">3</option>
+
+                <option value="4">4</option>
+
+                <option value="5">5</option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+
+            Ո՞ւմ կողմից եք հրավիրված
+
+            <select name="invitedBy" required>
+
+                <option value="">
+                    Ընտրել
+                </option>
+
+                <option value="Լևոնի կողմից">
+                    Լևոնի կողմից
+                </option>
+
+                <option value="Մերիի կողմից">
+                    Մերիի կողմից
+                </option>
+
+                <option value="Երկուսիս կողմից">
+                    Երկուսիս կողմից
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <button
+            type="submit"
+            class="rsvp-button">
+
+            Ուղարկել պատասխանը
+
+        </button>
+
+
+        <p class="rsvp-message" id="rsvpMessage">
+
+            Շնորհակալություն։
+            Ձեր պատասխանը լրացվել է։
+
+        </p>
+
+
+    </form>
 
 </section>
+
 
 
 <!-- MUSIC -->
 
-<section class="music section">
+<section class="music-section">
 
-<p class="eyebrow">ՄԵՐ ԵՐԳԸ</p>
+    <p class="eyebrow">
+        OUR SONG
+    </p>
 
-<p>
-    Մի փոքրիկ երաժշտություն՝ մինչ մեր օրը։
-</p>
+    <h2 class="section-title">
+        Une Vie d'Amour
+    </h2>
 
-<audio controls preload="none">
+    <p class="music-text">
 
-    <source src="our-song.mp3" type="audio/mpeg">
+        A melody for our forever.
 
-    Your browser does not support audio.
+    </p>
 
-</audio>
+
+    <audio id="weddingMusic" controls preload="none">
+
+        <source
+            src="our-song.mp3"
+            type="audio/mpeg">
+
+        Ձեր դիտարկիչը չի աջակցում աուդիո նվագարկմանը։
+
+    </audio>
 
 </section>
 
 
+
 <!-- FOOTER -->
 
-<footer>
+<footer class="footer">
 
-<div class="footer-swan">♡</div>
+    <div class="footer-swan">
+        🦢
+    </div>
 
-<p>Սիրով՝ Լևոն և Մերի</p>
+    <p class="footer-names">
+        Levon & Mery
+    </p>
 
-<span>06 . 12 . 2026</span>
+    <p class="footer-date">
+        06 . 12 . 2026
+    </p>
+
+    <div class="gold-line"></div>
+
+    <p class="eyebrow">
+        A LOVE LETTER TO FOREVER
+    </p>
 
 </footer>
 
 
 </main>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+/* =====================================
+   OPEN ENVELOPE
+===================================== */
+
+const openButton =
+    document.getElementById("openButton");
+
+const opening =
+    document.getElementById("opening");
+
+const invitation =
+    document.getElementById("invitation");
+
+
+openButton.addEventListener("click", function() {
+
+    opening.classList.add("opened");
+
+    setTimeout(function() {
+
+        opening.style.display = "none";
+
+        invitation.classList.add("visible");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 2500);
+
+});
+
+
+/* =====================================
+   LIVE COUNTDOWN
+===================================== */
+
+const weddingDate =
+    new Date("2026-12-06T14:00:00+04:00").getTime();
+
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+
+        document.getElementById("hours").textContent = "00";
+
+        document.getElementById("minutes").textContent = "00";
+
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+
+    }
+
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* =====================================
+   RSVP FORM
+===================================== */
+
+const rsvpForm =
+    document.getElementById("rsvpForm");
+
+const rsvpMessage =
+    document.getElementById("rsvpMessage");
+
+
+rsvpForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const formData =
+        new FormData(rsvpForm);
+
+    const firstName =
+        formData.get("firstName");
+
+    const lastName =
+        formData.get("lastName");
+
+    const attendance =
+        formData.get("attendance");
+
+    const guests =
+        formData.get("guests");
+
+    const invitedBy =
+        formData.get("invitedBy");
+
+
+    const message =
+
+        "Wedding RSVP\n\n" +
+
+        "Name: " + firstName + "\n" +
+
+        "Surname: " + lastName + "\n" +
+
+        "Attendance: " + attendance + "\n" +
+
+        "Number of guests: " + guests + "\n" +
+
+        "Invited by: " + invitedBy;
+
+
+    const subject =
+        encodeURIComponent("Wedding RSVP - Levon & Mery");
+
+    const body =
+        encodeURIComponent(message);
+
+
+    rsvpMessage.style.display = "block";
+
+    rsvpMessage.textContent =
+        "Շնորհակալություն։ Բացվում է էլեկտրոնային նամակը։";
+
+
+    window.location.href =
+        "mailto:YOUR_EMAIL@example.com" +
+        "?subject=" + subject +
+        "&body=" + body;
+
+});
+
+
+/* =====================================
+   MUSIC
+===================================== */
+
+const music =
+    document.getElementById("weddingMusic");
+
+
+// Music starts only after the visitor presses Play.
+// Browsers normally block automatic audio playback.
+
+
+</script>
+
 
 </body>
 
