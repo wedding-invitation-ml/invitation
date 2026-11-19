@@ -4,1488 +4,1199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f5eee4">
-<title>Levon & Mery | 06.12.2026</title>
+<meta name="theme-color" content="#fbfaf6">
+<title>Լևոն և Մերի | 06.12.2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================
-   1. GENERAL DESIGN
-========================================= */
-
 :root {
-    --cream: #f5eee4;
-    --paper: #fbf8f2;
-    --beige: #e9ddce;
-    --rose: #a65c50;
-    --rose-dark: #81483f;
-    --gold: #aa895c;
-    --text: #55483d;
-    --muted: #968779;
-    --line: #ddcdb9;
+  --paper: #fbfaf6;
+  --paper-light: #fffefa;
+  --brown: #594633;
+  --brown-light: #897762;
+  --gold: #b18b52;
+  --gold-light: #d6c19c;
+  --line: #e8dfd0;
+  --serif: "Noto Serif Armenian", Georgia, serif;
+  --sans: "Manrope", Arial, sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    background: var(--cream);
-    color: var(--text);
-    font-family: "Noto Serif Armenian", Georgia, serif;
-    font-weight: 300;
-    overflow-x: hidden;
+  margin: 0;
+  background: var(--paper);
+  color: var(--brown);
+  font-family: var(--serif);
+  font-weight: 300;
 }
 
-button, input, select {
-    font-family: inherit;
-}
+img { display: block; max-width: 100%; }
 
-button {
-    cursor: pointer;
-}
+button, input, textarea { font: inherit; }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.english {
-    font-family: "Cormorant Garamond", Georgia, serif;
-}
-
-.script {
-    font-family: "Great Vibes", cursive;
-    font-weight: 400;
-}
-
-.eyebrow {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--rose);
+.paper-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: .12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
 }
 
 .section {
-    padding: 85px 22px;
-    text-align: center;
+  width: min(900px, calc(100% - 38px));
+  margin: auto;
+  padding: 85px 0;
 }
 
-.section-heading {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(42px, 8vw, 65px);
-    color: var(--rose-dark);
-    font-weight: 400;
-    margin: 12px 0 20px;
+.eyebrow {
+  text-align: center;
+  font: 400 10px var(--sans);
+  letter-spacing: .25em;
+  color: var(--gold);
 }
 
-.decorative-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-    margin: 23px auto;
-    color: var(--gold);
+.section-title {
+  text-align: center;
+  font-size: clamp(25px, 4vw, 37px);
+  font-weight: 300;
+  margin: 15px 0 38px;
 }
 
-.decorative-line::before,
-.decorative-line::after {
-    content: "";
-    width: 48px;
-    height: 1px;
-    background: var(--line);
+/* ENVELOPE INTRO */
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* =========================================
-   2. OPENING INVITATION
-========================================= */
-
-.opening {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-
-    min-height: 100vh;
-    min-height: 100svh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    padding: 35px 20px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #fffaf1 0%,
-            #eadfd0 72%,
-            #d2c2ae 100%
-        );
-
-    transition: opacity 1.2s, visibility 1.2s;
+.intro:before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid var(--gold-light);
+  pointer-events: none;
 }
 
-.opening::before {
-    content: "";
-    position: absolute;
-    inset: 17px;
-    border: 1px solid rgba(170,137,92,.55);
-    pointer-events: none;
+.intro-title {
+  text-align: center;
+  margin-bottom: 25px;
+  z-index: 2;
 }
 
-.opening::after {
-    content: "";
-    position: absolute;
-    inset: 24px;
-    border: 1px solid rgba(255,255,255,.65);
-    pointer-events: none;
+.intro-title h1 {
+  font-size: clamp(34px, 7vw, 55px);
+  font-weight: 400;
+  margin: 0 0 12px;
 }
 
-.opening-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 500px;
+.intro-title p {
+  font: 300 13px var(--sans);
+  letter-spacing: .35em;
+  color: var(--brown-light);
 }
 
-.opening-caption {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: var(--rose-dark);
-}
-
-.opening-names {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(60px, 12vw, 88px);
-    font-weight: 400;
-    color: #755c49;
-    margin: 17px 0 25px;
-}
-
-/* Envelope */
-
-.envelope-scene {
-    width: min(370px, 86vw);
-    height: 260px;
-    margin: 0 auto;
-    position: relative;
-    perspective: 1100px;
+.envelope-stage {
+  width: min(570px, 88vw);
+  height: 380px;
+  position: relative;
+  perspective: 1200px;
 }
 
 .envelope {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 220px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 255px;
+  filter: drop-shadow(0 18px 22px #59463320);
 }
 
 .envelope-back {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg,#fffdf9,#e8dece);
-    box-shadow: 0 15px 35px rgba(80,60,38,.18);
+  position: absolute;
+  inset: 0;
+  background: #f4f1e9;
+  border: 1px solid #e5ddcf;
 }
 
-.envelope-left {
-    position: absolute;
-    inset: 0;
-    background: #e8ddce;
-    clip-path: polygon(0 0,50% 58%,0 100%);
-    z-index: 2;
-}
-
-.envelope-right {
-    position: absolute;
-    inset: 0;
-    background: #eee4d6;
-    clip-path: polygon(100% 0,50% 58%,100% 100%);
-    z-index: 2;
-}
-
-.envelope-front {
-    position: absolute;
-    inset: 0;
-    background: #f7f0e5;
-    clip-path: polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);
-    z-index: 3;
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #fffefa, #f3f0e8);
+  clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+  border: 1px solid #e9e1d3;
 }
 
 .envelope-flap {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(140deg,#fffdf9,#e6dac9);
-    clip-path: polygon(0 0,100% 0,50% 100%);
-    transform-origin: top;
-    transition: transform 1.2s ease;
-    z-index: 5;
+  position: absolute;
+  inset: 0 0 auto;
+  height: 70%;
+  background: linear-gradient(160deg, #fffefa, #f1ede4);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 1.2s ease;
+  z-index: 4;
 }
-
-/* Letter visible inside */
-
-.envelope-letter {
-    position: absolute;
-    width: 86%;
-    height: 185px;
-    bottom: 12px;
-    left: 7%;
-    background: #fffdf8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transition: transform 1s ease .3s;
-    box-shadow: 0 0 12px rgba(0,0,0,.04);
-}
-
-.envelope-letter h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 37px;
-    font-weight: 400;
-    margin: 10px 0;
-}
-
-.envelope-letter p {
-    font-size: 11px;
-    color: var(--gold);
-}
-
-/* Swan emblem inspired by the LM ceramic plate */
 
 .wax-seal {
-    position: absolute;
-    top: 77px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    z-index: 7;
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  border: 0;
+  border-radius: 47% 52% 49% 51%;
+  background: radial-gradient(circle at 35% 28%, #e1c28b, #b58a4b 55%, #88602e);
+  box-shadow: inset 0 2px 4px #fff8,
+              inset 0 -4px 8px #71491d66,
+              0 5px 12px #6c4a243b;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: .3s;
+}
 
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%,
-        #fffdf8,#e8ddca 75%,#c9b28b);
-
-    border: 2px solid #b39768;
-
-    box-shadow:
-        0 4px 12px rgba(70,50,25,.22),
-        inset 0 2px 5px white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .wax-seal svg {
-    width: 72px;
-    height: 66px;
+  width: 65px;
+  fill: none;
+  stroke: #f8e8c9;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.open-button {
-    margin-top: 23px;
-    border: none;
-    background: transparent;
-    color: var(--rose-dark);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
-    letter-spacing: 3px;
-    padding: 15px;
-    transition: .3s;
+.letter {
+  position: absolute;
+  z-index: 2;
+  left: 7%;
+  right: 7%;
+  bottom: 55px;
+  height: 285px;
+  background: var(--paper-light);
+  border: 1px solid #eee7da;
+  box-shadow: 0 5px 18px #5d4b3012;
+  text-align: center;
+  padding: 25px 15px;
+  opacity: 0;
+  transform: translateY(90px);
+  transition: 1.1s ease;
 }
 
-.open-button:hover {
-    letter-spacing: 5px;
+.letter p {
+  font-size: 16px;
+  line-height: 1.9;
 }
 
-/* Envelope animation */
-
-.opening.opened .envelope-flap {
-    transform: rotateX(180deg);
+.letter .greeting {
+  font-size: 19px;
 }
 
-.opening.opened .envelope-letter {
-    transform: translateY(-125px);
+.letter-line {
+  width: 55px;
+  height: 1px;
+  background: var(--gold-light);
+  margin: 0 auto 18px;
 }
 
-.opening.opened .wax-seal {
-    opacity: 0;
-    transition: opacity .3s;
+.intro.open .envelope-flap {
+  transform: rotateX(180deg);
 }
 
-.opening.closed {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+.intro.open .wax-seal {
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* =========================================
-   3. MAIN INTRODUCTION
-========================================= */
+.intro.open .letter {
+  opacity: 1;
+  transform: translateY(-90px);
+  z-index: 7;
+}
+
+.tap-hint {
+  font-size: 12px;
+  color: var(--brown-light);
+  margin-top: 15px;
+}
+
+.skip-intro {
+  background: none;
+  border: 0;
+  color: var(--gold);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* MAIN PAGE */
 
 .invitation {
-    display: none;
-    opacity: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .invitation.visible {
-    display: block;
-    animation: revealPage 1.6s ease forwards;
-}
-
-@keyframes revealPage {
-    to { opacity: 1; }
+  display: block;
+  opacity: 1;
 }
 
 .hero {
-    min-height: 90vh;
-    min-height: 90svh;
+  text-align: center;
+  padding-top: 65px;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.hero-photo {
+  max-width: 760px;
+  margin: 30px auto;
+  overflow: hidden;
+}
 
-    padding: 100px 22px;
-    text-align: center;
-
-    background:
-        radial-gradient(ellipse at center,
-        #fffdf8 0%,
-        #f2e9dc 100%);
+.hero-photo img {
+  width: 100%;
+  max-height: 850px;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: grayscale(1);
 }
 
 .hero-names {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(68px, 13vw, 108px);
-    color: var(--rose-dark);
-    font-weight: 400;
-    margin: 20px 0;
-}
-
-.hero-year {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 45px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    color: var(--gold);
-    margin: 5px;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 300;
+  margin: 20px 0 8px;
 }
 
 .hero-date {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 21px;
-    letter-spacing: 4px;
-    color: var(--rose);
-    margin: 12px 0 25px;
+  font: 300 12px var(--sans);
+  letter-spacing: .35em;
+  color: var(--brown-light);
 }
 
-.hero-description {
-    max-width: 470px;
-    font-size: 14px;
-    line-height: 2.3;
-    color: var(--text);
+/* CALENDAR */
+
+.calendar-section {
+  max-width: 650px;
+  text-align: center;
 }
 
-/* =========================================
-   4. PHOTO GALLERY
-========================================= */
-
-.gallery {
-    background: #eee5d9;
+.calendar {
+  max-width: 550px;
+  margin: 30px auto 0;
+  padding: 30px 18px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.gallery-grid {
-    max-width: 850px;
-    margin: 45px auto 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 9px;
 }
 
-.gallery-item {
-    overflow: hidden;
-    background: #e5dacb;
+.weekdays {
+  font-size: 11px;
+  color: var(--brown-light);
+  margin-bottom: 18px;
 }
 
-.gallery-item.tall {
-    grid-row: span 2;
+.days { row-gap: 12px; }
+
+.day {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  font: 300 14px var(--sans);
+  position: relative;
 }
 
-.gallery-item.wide {
-    grid-column: span 2;
+.heart-day {
+  color: white;
+  z-index: 0;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    min-height: 210px;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: transform .8s ease;
+.heart-day:before {
+  content: "♡";
+  position: absolute;
+  color: var(--gold);
+  font-size: 43px;
+  z-index: -1;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.035);
+/* ROUTE */
+
+.route-layout {
+  position: relative;
+  max-width: 740px;
+  margin: 40px auto;
 }
 
-.gallery-item.tall img {
-    min-height: 490px;
+.route-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
-.gallery-item.wide img {
-    max-height: 390px;
+.route-path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 7;
+  stroke-dashoffset: 1200;
+  transition: stroke-dashoffset 4s ease;
 }
 
-/* =========================================
-   5. WEDDING TIMELINE
-========================================= */
-
-.timeline-section {
-    background: var(--paper);
+.route-section.show-route .route-path {
+  stroke-dashoffset: 0;
 }
 
-.timeline {
-    position: relative;
-    max-width: 620px;
-    margin: 50px auto 0;
-    text-align: left;
+.stop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+  min-height: 260px;
+  position: relative;
 }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 39px;
-    top: 12px;
-    bottom: 15px;
-    width: 1px;
-    background: var(--line);
+.stop-art {
+  width: min(100%, 270px);
+  justify-self: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 5px 18px #5d4b3010;
 }
 
-.timeline-event {
-    position: relative;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 25px;
-    padding-bottom: 50px;
+.stop-art img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
 }
 
-.timeline-event:last-child {
-    padding-bottom: 5px;
+.stop-copy h3 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 8px 0;
 }
 
-.timeline-time {
-    position: relative;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 28px;
-    color: var(--rose);
-    background: var(--paper);
-    z-index: 1;
+.stop-time {
+  font: 300 30px var(--sans);
+  color: var(--gold);
 }
 
-.timeline-time::after {
-    content: "";
-    width: 9px;
-    height: 9px;
-    background: var(--gold);
-    border-radius: 50%;
-    position: absolute;
-    top: 13px;
-    right: -5px;
-    box-shadow: 0 0 0 5px var(--paper);
+.stop-copy p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 4px 0;
 }
 
-.timeline-info h3 {
-    font-size: 19px;
-    font-weight: 400;
-    margin-bottom: 10px;
+.map-link {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 12px;
+  margin-top: 10px;
 }
 
-.timeline-info p {
-    font-size: 13px;
-    line-height: 2;
-    color: var(--muted);
+.church .stop-art { grid-column: 2; }
+.church .stop-copy { grid-column: 1; text-align: right; }
+.restaurant .stop-art { grid-column: 1; grid-row: 1; }
+.restaurant .stop-copy { grid-column: 2; grid-row: 1; }
+
+.route-middle {
+  text-align: center;
+  color: var(--gold);
+  padding: 10px;
 }
 
-/* =========================================
-   6. SKETCHES AND LOCATIONS
-========================================= */
+/* POLAROID PHOTOS */
 
-.locations {
-    background: #f0e7da;
+.memories {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 35px;
+  align-items: center;
 }
 
-.location-card {
-    max-width: 850px;
-    margin: 45px auto 75px;
+.memory-title {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.65;
+  font-weight: 300;
+  text-align: left;
 }
 
-.location-sketch {
-    width: 100%;
-    overflow: hidden;
-    background: #f7f0e5;
+.polaroids {
+  position: relative;
+  height: 390px;
+  max-width: 520px;
+  width: 100%;
 }
 
-.location-sketch img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    mix-blend-mode: multiply;
+.polaroid {
+  position: absolute;
+  width: 48%;
+  padding: 9px 9px 32px;
+  background: #fffefa;
+  box-shadow: 0 8px 25px #43372225;
+  border: 1px solid #eee9df;
 }
 
-.location-info {
-    padding: 30px 15px 0;
-    text-align: center;
+.polaroid img {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  filter: grayscale(1);
 }
 
-.location-time {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 36px;
-    color: var(--rose);
-    margin: 12px 0;
+.polaroid.one {
+  left: 3%;
+  top: 12%;
+  transform: rotate(-9deg);
 }
 
-.location-info h3 {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 12px;
+.polaroid.two {
+  right: 2%;
+  top: 5%;
+  transform: rotate(7deg);
 }
 
-.location-info p {
-    font-size: 13px;
-    line-height: 2.2;
+.polaroid.three {
+  left: 26%;
+  bottom: 0;
+  transform: rotate(-2deg);
 }
 
-.map-button {
-    display: inline-block;
-    margin-top: 17px;
-    padding: 11px 25px;
-    text-decoration: none;
-    color: var(--rose-dark);
-    border: 1px solid var(--gold-light);
-    font-family: "Cormorant Garamond", serif;
-    letter-spacing: 2px;
-    font-size: 13px;
-    transition: .3s;
+/* COUNTDOWN */
+
+.countdown-section { text-align: center; }
+
+.countdown-photo {
+  max-width: 700px;
+  margin: 0 auto 55px;
 }
 
-.map-button:hover {
-    background: var(--rose-dark);
-    color: white;
-}
-
-/* =========================================
-   7. COUNTDOWN
-========================================= */
-
-.countdown-section {
-    background: #e8dbca;
-    text-align: center;
-    padding: 85px 18px;
+.countdown-photo img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  filter: grayscale(1);
 }
 
 .countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(10px,4vw,35px);
-    margin: 40px auto 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 4vw, 35px);
+  margin: 35px auto 20px;
 }
 
-.countdown-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.countdown div {
+  display: grid;
+  gap: 8px;
+  min-width: 55px;
 }
 
-.countdown-item strong {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 400;
-    font-size: clamp(30px,7vw,50px);
-    color: var(--rose-dark);
+.countdown strong {
+  font: 300 clamp(25px, 5vw, 42px) var(--sans);
 }
 
-.countdown-item span {
-    font-size: 10px;
-    color: var(--muted);
+.countdown span {
+  font-size: 11px;
+  color: var(--brown-light);
 }
 
-.countdown-divider {
-    height: 35px;
-    width: 1px;
-    background: var(--gold-light);
+.countdown i {
+  height: 35px;
+  width: 1px;
+  background: var(--line);
 }
 
-/* =========================================
-   8. LITTLE DETAILS
-========================================= */
-
-.details {
-    background: var(--paper);
+.countdown-note {
+  color: var(--brown-light);
+  font-size: 13px;
+  margin-top: 25px;
 }
 
-.details-card {
-    max-width: 610px;
-    margin: 35px auto 0;
-    padding: 40px 25px;
-    border: 1px solid var(--line);
-    background: rgba(255,255,255,.3);
+/* RSVP */
+
+.rsvp-section {
+  max-width: 700px;
+  border-top: 1px solid var(--line);
 }
 
-.details-card p {
-    font-size: 14px;
-    line-height: 2.4;
+.rsvp-lead {
+  text-align: center;
+  color: var(--brown-light);
+  font-size: 13px;
+  margin: -15px 0 35px;
 }
 
-/* =========================================
-   9. RSVP QUESTIONNAIRE
-========================================= */
-
-.rsvp {
-    background: #eee4d6;
+#rsvpForm {
+  max-width: 520px;
+  margin: auto;
+  display: grid;
+  gap: 23px;
 }
 
-.rsvp-description {
-    max-width: 480px;
-    margin: 20px auto 40px;
-    font-size: 14px;
-    line-height: 2.3;
+.field {
+  display: grid;
+  gap: 10px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
 }
 
-.rsvp-form {
-    display: grid;
-    gap: 23px;
-    text-align: left;
-    max-width: 540px;
-    margin: auto;
+.field input[type="text"],
+.field input[type="number"],
+.field textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d8cbb7;
+  background: transparent;
+  padding: 13px 4px;
+  outline: none;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 13px;
 }
 
-.rsvp-form label,
-.rsvp-form legend {
-    font-size: 13px;
+.field textarea { resize: vertical; }
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brown-light);
+  font-size: 13px;
 }
 
-.rsvp-form input[type="text"],
-.rsvp-form input[type="tel"],
-.rsvp-form select {
-    display: block;
-    width: 100%;
-    padding: 13px 3px;
-    margin-top: 10px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #cbbba5;
-    outline: none;
-    color: var(--text);
-    font-size: 14px;
+.choice input { accent-color: var(--gold); }
+
+.submit-button {
+  justify-self: center;
+  min-width: 190px;
+  padding: 14px 25px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: white;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.rsvp-form input:focus,
-.rsvp-form select:focus {
-    border-color: var(--rose);
+.submit-button:hover {
+  background: transparent;
+  color: var(--gold);
 }
 
-.radio-group {
-    border: none;
-    display: grid;
-    gap: 15px;
+.form-status {
+  min-height: 20px;
+  text-align: center;
+  color: var(--gold);
+  font-size: 13px;
 }
 
-.radio-group legend {
-    margin-bottom: 13px;
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.radio-option input {
-    accent-color: var(--rose);
-}
-
-.rsvp-button {
-    padding: 16px;
-    border: 1px solid var(--rose-dark);
-    background: var(--rose-dark);
-    color: white;
-    font-size: 14px;
-    transition: .3s;
-}
-
-.rsvp-button:hover {
-    background: transparent;
-    color: var(--rose-dark);
-}
-
-.rsvp-message {
-    display: none;
-    color: var(--rose);
-    text-align: center;
-    font-size: 13px;
-    line-height: 2;
-}
-
-/* =========================================
-   10. MUSIC
-========================================= */
-
-.music {
-    background: #e9dfd1;
-}
-
-.music-description {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 17px;
-    color: var(--muted);
-    margin: 15px 0;
-}
-
-audio {
-    width: min(360px,100%);
-    margin-top: 20px;
-}
-
-/* =========================================
-   11. FOOTER
-========================================= */
+/* FOOTER */
 
 .footer {
-    padding: 60px 20px;
+  text-align: center;
+  padding: 60px 20px 70px;
+  border-top: 1px solid var(--line);
+}
+
+.footer p {
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.footer span {
+  font: 11px var(--sans);
+  letter-spacing: .12em;
+  color: var(--brown-light);
+}
+
+.music-button {
+  position: fixed;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--gold-light);
+  border-radius: 50%;
+  background: var(--paper-light);
+  color: var(--gold);
+  cursor: pointer;
+  display: none;
+}
+
+.music-button.visible { display: block; }
+
+/* MOBILE */
+
+@media(max-width:650px) {
+  .section {
+    width: calc(100% - 34px);
+    padding: 70px 0;
+  }
+
+  .envelope-stage { height: 330px; }
+  .envelope { height: 215px; }
+  .letter {
+    height: 260px;
+    padding: 20px 10px;
+  }
+  .letter .greeting { font-size: 16px; }
+  .letter p { font-size: 13px; }
+  .wax-seal { width: 78px; height: 78px; }
+  .wax-seal svg { width: 57px; }
+
+  .calendar { padding: 24px 8px; }
+  .weekdays { font-size: 9px; gap: 3px; }
+  .days { gap: 3px; row-gap: 9px; }
+  .day { font-size: 12px; }
+
+  .route-line { width: 100px; }
+  .stop { gap: 12px; min-height: 215px; }
+  .stop-art { padding: 5px; }
+  .stop-art img { height: 105px; }
+  .stop-time { font-size: 24px; }
+  .stop-copy h3 { font-size: 15px; }
+  .stop-copy p { font-size: 10px; }
+
+  .memories {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .memory-title {
     text-align: center;
-    background: #e4d7c6;
-}
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
 
-.footer-names {
-    font-family: "Great Vibes", cursive;
-    font-weight: 400;
-    font-size: 52px;
-    margin: 15px 0;
-}
+  .polaroids {
+    height: 330px;
+    max-width: 430px;
+  }
 
-.footer-date {
-    font-family: "Cormorant Garamond", serif;
-    letter-spacing: 4px;
-    color: var(--rose);
-}
+  .polaroid { padding: 7px 7px 25px; }
+  .polaroid img { height: 165px; }
 
-/* =========================================
-   12. MOBILE
-========================================= */
-
-@media(max-width:600px) {
-    .section {
-        padding: 70px 18px;
-    }
-
-    .opening-names {
-        font-size: 64px;
-    }
-
-    .envelope-scene {
-        width: 86vw;
-        height: 240px;
-    }
-
-    .envelope {
-        height: 200px;
-    }
-
-    .envelope-flap {
-        height: 110px;
-    }
-
-    .wax-seal {
-        top: 70px;
-        width: 72px;
-        height: 72px;
-    }
-
-    .gallery-grid {
-        gap: 8px;
-    }
-
-    .gallery-item img {
-        min-height: 145px;
-    }
-
-    .gallery-item.tall img {
-        min-height: 300px;
-    }
-
-    .gallery-item.wide img {
-        max-height: 260px;
-    }
-
-    .timeline-event {
-        grid-template-columns: 70px 1fr;
-        gap: 15px;
-    }
-
-    .timeline::before {
-        left: 34px;
-    }
-
-    .timeline-time {
-        font-size: 24px;
-    }
-
-    .countdown {
-        gap: 9px;
-    }
-
-    .countdown-item strong {
-        font-size: 27px;
-    }
-
-    .countdown-item span {
-        font-size: 9px;
-    }
-
-    .countdown-divider {
-        height: 25px;
-    }
-
-    .details-card {
-        padding: 30px 15px;
-    }
+  .countdown { gap: 8px; }
+  .countdown div { min-width: 42px; }
+  .countdown strong { font-size: 23px; }
+  .countdown i { height: 27px; }
 }
 
 @media(prefers-reduced-motion:reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-    }
+  * { scroll-behavior: auto !important; transition: none !important; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================================
-     OPENING CARD
-========================================= -->
+<div class="paper-texture"></div>
 
-<section class="opening" id="opening">
+<!-- ENVELOPE INTRO -->
 
-    <div class="opening-content">
+<section class="intro" id="intro">
 
-        <p class="opening-caption">
-            A LOVE LETTER TO FOREVER
-        </p>
+  <div class="intro-title">
+    <h1>Լևոն և Մերի</h1>
+    <p>06.12.2026</p>
+  </div>
 
-        <h1 class="opening-names">Levon & Mery</h1>
+  <div class="envelope-stage">
 
-        <div class="envelope-scene">
+    <div class="letter" id="letter">
+      <div class="letter-line"></div>
 
-            <div class="envelope-letter">
-                <div>
-                    <p class="eyebrow">Մեր հարսանյաց օրը</p>
-                    <h2>Լևոն & Մերի</h2>
-                    <p>06 . 12 . 2026</p>
-                </div>
-            </div>
+      <p class="greeting">
+        Մեր շատ սիրելի<br>
+        հարազատներ և ընկերներ,
+      </p>
 
-            <div class="envelope">
+      <p>
+        սիրով հրավիրում ենք Ձեզ՝<br>
+        մեզ հետ կիսելու մեր կյանքի<br>
+        ամենակարևոր օրը։
+      </p>
 
-                <div class="envelope-back"></div>
-                <div class="envelope-left"></div>
-                <div class="envelope-right"></div>
-                <div class="envelope-front"></div>
-                <div class="envelope-flap"></div>
-
-                <!-- TWO SWANS AND LM SEAL -->
-                <div class="wax-seal">
-
-                    <svg viewBox="0 0 150 135"
-                         xmlns="http://www.w3.org/2000/svg"
-                         fill="none">
-
-                        <g stroke="#A88952"
-                           stroke-width="3.2"
-                           stroke-linecap="round"
-                           stroke-linejoin="round">
-
-                            <path d="M72 83 C68 70 63 61 49 55 C34 48 29 36 34 23 C37 15 47 14 52 21 C58 29 53 39 47 44 C60 45 72 52 78 64 C85 79 76 91 59 91 C42 92 24 82 8 76"/>
-
-                            <path d="M78 83 C82 70 87 61 101 55 C116 48 121 36 116 23 C113 15 103 14 98 21 C92 29 97 39 103 44 C90 45 78 52 72 64 C65 79 74 91 91 91 C108 92 126 82 142 76"/>
-
-                            <path d="M9 77 Q38 59 61 71"/>
-                            <path d="M19 84 Q43 72 61 79"/>
-                            <path d="M29 91 Q46 83 61 86"/>
-
-                            <path d="M141 77 Q112 59 89 71"/>
-                            <path d="M131 84 Q107 72 89 79"/>
-                            <path d="M121 91 Q104 83 89 86"/>
-                        </g>
-
-                        <g fill="#A88952">
-                            <circle cx="40" cy="25" r="2"/>
-                            <circle cx="110" cy="25" r="2"/>
-                        </g>
-
-                        <text x="75" y="122"
-                              text-anchor="middle"
-                              fill="#A88952"
-                              font-family="Georgia,serif"
-                              font-size="23"
-                              letter-spacing="3">LM</text>
-                    </svg>
-
-                </div>
-            </div>
-        </div>
-
-        <button class="open-button" id="openButton">
-            ՍԵՂՄԵՔ ԲԱՑԻԿԻ ՎՐԱ
-        </button>
-
+      <div class="letter-line"></div>
     </div>
+
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-pocket"></div>
+      <div class="envelope-flap" id="envelopeFlap"></div>
+
+      <button class="wax-seal" id="openSeal"
+        aria-label="Բացել հրավերը՝ սեղմելով կնիքին">
+
+        <svg viewBox="0 0 100 100">
+          <path d="M28 65 C18 57 20 40 32 33 C39 29 44 34 50 44 C56 34 61 29 68 33 C80 40 82 57 72 65 C65 72 57 75 50 80 C43 75 35 72 28 65Z"/>
+          <path d="M49 44 C43 32 34 31 29 39 C24 48 34 57 49 65 M51 44 C57 32 66 31 71 39 C76 48 66 57 51 65"/>
+          <path d="M24 68 Q50 79 76 68 M30 75 Q50 84 70 75"/>
+        </svg>
+
+      </button>
+    </div>
+  </div>
+
+  <p class="tap-hint">Հրավերը տեսնելու համար՝ սեղմեք կնիքի վրա</p>
+  <button class="skip-intro" id="skipIntro">Անցնել հրավերին</button>
+
 </section>
 
+<!-- MAIN WEBSITE -->
 
-<!-- =========================================
-     MAIN INVITATION
-========================================= -->
+<main class="invitation" id="invitation">
 
-<main id="invitation" class="invitation">
+  <!-- HERO PHOTO -->
 
-    <!-- INTRODUCTION -->
+  <section class="section hero">
+    <p class="eyebrow">ՄԵՐ ՊԱՏՄՈՒԹՅՈՒՆԸ</p>
 
-    <section class="hero">
+    <figure class="hero-photo">
+      <img src="assets/hero-couple.jpg" alt="Լևոն և Մերի">
+    </figure>
 
-        <p class="eyebrow">2026</p>
+    <h2 class="hero-names">Լևոն և Մերի</h2>
+    <p class="hero-date">06 · 12 · 2026</p>
+  </section>
 
-        <h1 class="hero-names">Levon & Mery</h1>
+  <!-- CALENDAR -->
 
-        <p class="eyebrow">
-            ՀՐԱՎԻՐՈՒՄ ԵՆՔ ՄԵՐ ՀԱՐՍԱՆԻՔԻՆ
-        </p>
+  <section class="section calendar-section">
+    <p class="eyebrow">ՊԱՀՊԱՆԵՔ ԱՅՍ ՕՐԸ</p>
+    <h2 class="section-title">Դեկտեմբեր 2026</h2>
 
-        <div class="decorative-line">✧</div>
+    <div class="calendar">
+      <div class="weekdays">
+        <span>Երկ</span><span>Երք</span><span>Չրք</span>
+        <span>Հնգ</span><span>Ուրբ</span><span>Շբթ</span><span>Կիր</span>
+      </div>
 
-        <p class="hero-year">2026</p>
+      <div class="days">
+        <span></span>
+        <span class="day">1</span>
+        <span class="day">2</span>
+        <span class="day">3</span>
+        <span class="day">4</span>
+        <span class="day">5</span>
+        <span class="day heart-day">6</span>
 
-        <p class="hero-date">06 ԴԵԿՏԵՄԲԵՐ</p>
+        <span class="day">7</span><span class="day">8</span>
+        <span class="day">9</span><span class="day">10</span>
+        <span class="day">11</span><span class="day">12</span>
+        <span class="day">13</span>
 
-        <p class="hero-description">
-            Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու
-            մեր հարսանյաց արարողությանը։
-            <br><br>
-            Մեզ համար մեծ ուրախություն կլինի
-            այս օրը կիսել Ձեզ հետ։
-        </p>
+        <span class="day">14</span><span class="day">15</span>
+        <span class="day">16</span><span class="day">17</span>
+        <span class="day">18</span><span class="day">19</span>
+        <span class="day">20</span>
 
-    </section>
+        <span class="day">21</span><span class="day">22</span>
+        <span class="day">23</span><span class="day">24</span>
+        <span class="day">25</span><span class="day">26</span>
+        <span class="day">27</span>
 
+        <span class="day">28</span><span class="day">29</span>
+        <span class="day">30</span><span class="day">31</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- PHOTO SECTION -->
+  <!-- WEDDING DAY ROUTE -->
 
-    <section class="gallery section">
+  <section class="section route-section" id="routeSection">
+    <p class="eyebrow">ՄԵՐ ՀԱՐՍԱՆԵԿԱՆ ՕՐԸ</p>
+    <h2 class="section-title">Մեր օրվա ճանապարհը</h2>
 
-        <p class="eyebrow">OUR STORY</p>
+    <div class="route-layout">
 
-        <h2 class="section-heading">Մեր պատմությունը</h2>
+      <svg class="route-line" viewBox="0 0 260 700" preserveAspectRatio="none">
+        <path class="route-path"
+          d="M130 20 C20 85 25 155 130 210 S235 330 130 385 S25 505 130 560 S235 640 130 680"/>
+      </svg>
 
-        <div class="decorative-line">✧</div>
-
-        <div class="gallery-grid">
-
-            <figure class="gallery-item tall">
-                <img src="./photo-1.jpg" alt="Levon and Mery">
-            </figure>
-
-            <figure class="gallery-item wide">
-                <img src="./photo-2.jpg" alt="Levon and Mery">
-            </figure>
-
-            <figure class="gallery-item">
-                <img src="./photo-3.jpg" alt="Levon and Mery">
-            </figure>
-
-            <figure class="gallery-item">
-                <img src="./photo-4.jpg" alt="Our engagement">
-            </figure>
-
-            <figure class="gallery-item wide">
-                <img src="./photo-5.jpg" alt="Levon and Mery">
-            </figure>
-
+      <article class="stop church">
+        <div class="stop-art">
+          <img src="assets/church-sketch.jpg" alt="Սուրբ Հովհաննես եկեղեցի">
         </div>
 
-    </section>
+        <div class="stop-copy">
+          <span class="stop-time">14:00</span>
+          <h3>Պսակադրություն</h3>
+          <p>Սուրբ Հովհաննես եկեղեցի</p>
+          <p>Մեղրի, Փոքր թաղ</p>
+          <a class="map-link"
+             href="https://www.google.com/maps/search/?api=1&query=Սուրբ+Հովհաննես+եկեղեցի+Մեղրի"
+             target="_blank" rel="noopener">Քարտեզ ↗</a>
+        </div>
+      </article>
 
+      <div class="route-middle">✦</div>
 
-    <!-- WEDDING DAY TIMELINE -->
-
-    <section class="timeline-section section">
-
-        <p class="eyebrow">OUR WEDDING DAY</p>
-
-        <h2 class="section-heading">Օրվա ծրագիրը</h2>
-
-        <div class="decorative-line">✧</div>
-
-        <div class="timeline">
-
-            <div class="timeline-event">
-
-                <div class="timeline-time">14:00</div>
-
-                <div class="timeline-info">
-
-                    <h3>Պսակադրություն</h3>
-
-                    <p>
-                        Մեղրիի Սուրբ Հովհաննես եկեղեցի
-                        <br>
-                        քաղաք Մեղրի, Փոքր թաղ
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-event">
-
-                <div class="timeline-time">17:00</div>
-
-                <div class="timeline-info">
-
-                    <h3>Տոնական խնջույք</h3>
-
-                    <p>
-                        «Մարիշոկ» ռեստորան
-                        <br>
-                        քաղաք Ագարակ
-                    </p>
-
-                </div>
-
-            </div>
-
+      <article class="stop restaurant">
+        <div class="stop-art">
+          <img src="assets/restaurant-sketch.jpg" alt="Մարիշոկ ռեստորան">
         </div>
 
-    </section>
-
-
-    <!-- LOCATION SKETCHES -->
-
-    <section class="locations section">
-
-        <p class="eyebrow">THE PLACES</p>
-
-        <h2 class="section-heading">Սպասում ենք Ձեզ</h2>
-
-        <div class="decorative-line">✧</div>
-
-
-        <!-- CHURCH -->
-
-        <article class="location-card">
-
-            <div class="location-sketch">
-
-                <img src="./church-sketch.jpeg"
-                     alt="Meghri Saint Hovhannes Church sketch">
-
-            </div>
-
-            <div class="location-info">
-
-                <p class="eyebrow">THE CEREMONY</p>
-
-                <p class="location-time">14:00</p>
-
-                <h3>Պսակադրություն</h3>
-
-                <p>
-                    Մեղրիի Սուրբ Հովհաննես եկեղեցի
-                    <br>
-                    քաղաք Մեղրի, Փոքր թաղ
-                </p>
-
-                <a
-                  class="map-button"
-                  href="https://www.google.com/maps/search/?api=1&query=Saint+Hovhannes+Church+Meghri+Armenia"
-                  target="_blank"
-                  rel="noopener">
-                    ՔԱՐՏԵԶ
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <div class="decorative-line">❧</div>
-
-
-        <!-- RESTAURANT -->
-
-        <article class="location-card">
-
-            <div class="location-sketch">
-
-                <img src="./hall-sketch.jpeg"
-                     alt="Marishok Restaurant sketch">
-
-            </div>
-
-            <div class="location-info">
-
-                <p class="eyebrow">THE CELEBRATION</p>
-
-                <p class="location-time">17:00</p>
-
-                <h3>Տոնական խնջույք</h3>
-
-                <p>
-                    «Մարիշոկ» ռեստորան
-                    <br>
-                    քաղաք Ագարակ
-                </p>
-
-                <a
-                  class="map-button"
-                  href="https://www.google.com/maps/search/?api=1&query=Marishok+Restaurant+Agarak+Armenia"
-                  target="_blank"
-                  rel="noopener">
-                    ՔԱՐՏԵԶ
-                </a>
-
-            </div>
-
-        </article>
-
-    </section>
-
-
-    <!-- COUNTDOWN -->
-
-    <section class="countdown-section">
-
-        <p class="eyebrow">THE COUNTDOWN</p>
-
-        <h2 class="section-heading">Մեր օրվան մնացել է...</h2>
-
-        <p class="small-text">
-            Մինչև մեր կյանքի նոր էջի սկիզբը
-        </p>
-
-        <div class="countdown">
-
-            <div class="countdown-item">
-                <strong id="days">00</strong>
-                <span>ՕՐ</span>
-            </div>
-
-            <div class="countdown-divider"></div>
-
-            <div class="countdown-item">
-                <strong id="hours">00</strong>
-                <span>ԺԱՄ</span>
-            </div>
-
-            <div class="countdown-divider"></div>
-
-            <div class="countdown-item">
-                <strong id="minutes">00</strong>
-                <span>ՐՈՊԵ</span>
-            </div>
-
-            <div class="countdown-divider"></div>
-
-            <div class="countdown-item">
-                <strong id="seconds">00</strong>
-                <span>ՎՐԿ</span>
-            </div>
-
+        <div class="stop-copy">
+          <span class="stop-time">17:00</span>
+          <h3>Հարսանեկան խնջույք</h3>
+          <p>«Մարիշոկ» ռեստորան</p>
+          <p>Ագարակ</p>
+          <a class="map-link"
+             href="https://www.google.com/maps/search/?api=1&query=Մարիշոկ+ռեստորան+Ագարակ"
+             target="_blank" rel="noopener">Քարտեզ ↗</a>
         </div>
+      </article>
 
-    </section>
+    </div>
+  </section>
 
+  <!-- POLAROID PHOTOS -->
 
-    <!-- DETAILS -->
+  <section class="section memories">
 
-    <section class="details section">
+    <div>
+      <p class="eyebrow">ՄԵՐ ՊԱՏՄՈՒԹՅՈՒՆԸ</p>
+      <h2 class="memory-title">
+        Սերը մեզ<br>
+        հասցրեց<br>
+        այստեղ…
+      </h2>
+    </div>
 
-        <p class="eyebrow">A LITTLE NOTE</p>
+    <div class="polaroids">
 
-        <h2 class="section-heading">Մանրուքներ</h2>
+      <figure class="polaroid one">
+        <img src="assets/polaroid-1.jpg" alt="Մեր լուսանկարը">
+      </figure>
 
-        <div class="decorative-line">✧</div>
+      <figure class="polaroid two">
+        <img src="assets/polaroid-2.jpg" alt="Մեր լուսանկարը">
+      </figure>
 
-        <div class="details-card">
+      <figure class="polaroid three">
+        <img src="assets/polaroid-3.jpg" alt="Մեր լուսանկարը">
+      </figure>
 
-            <p>
-                Ձեզ հետ բերեք սեր, ժպիտներ ու անսահման
-                դրական էմոցիաներ։
-                <br><br>
-                Մենք կարևորում ենք Ձեր ներկայությունը
-                մեր կողքին և անհամբեր սպասում ենք
-                միասին տոնելու մեր օրը։
-            </p>
+    </div>
+  </section>
 
-        </div>
+  <!-- COUNTDOWN PHOTO AND TIMER -->
 
-    </section>
+  <section class="section countdown-section">
 
+    <figure class="countdown-photo">
+      <img src="assets/countdown-couple.jpg" alt="Լևոն և Մերի">
+    </figure>
 
-    <!-- RSVP -->
+    <p class="eyebrow">ՄԻՆՉԵՎ ՄԵՐ ՕՐԸ</p>
+    <h2 class="section-title">06 · 12 · 2026</h2>
 
-    <section class="rsvp section">
+    <div class="countdown">
+      <div><strong id="days">000</strong><span>օր</span></div>
+      <i></i>
+      <div><strong id="hours">00</strong><span>ժամ</span></div>
+      <i></i>
+      <div><strong id="minutes">00</strong><span>րոպե</span></div>
+      <i></i>
+      <div><strong id="seconds">00</strong><span>վայրկյան</span></div>
+    </div>
 
-        <p class="eyebrow">KINDLY RESPOND</p>
+    <p class="countdown-note">
+      Սպասումով դեպի մեր ամենակարևոր օրը…
+    </p>
 
-        <h2 class="section-heading">Հարցաթերթիկ</h2>
+  </section>
 
-        <div class="decorative-line">✧</div>
+  <!-- RSVP FORM -->
 
-        <p class="rsvp-description">
-            Խնդրում ենք հաստատել Ձեր ներկայությունը։
-            <br>
-            Մեզ համար կարևոր է իմանալ՝ կկարողանա՞ք
-            միանալ մեր տոնին։
-        </p>
+  <section class="section rsvp-section">
 
-        <form class="rsvp-form" id="rsvpForm">
+    <p class="eyebrow">RSVP</p>
+    <h2 class="section-title">Սիրով սպասում ենք Ձեզ</h2>
 
-            <label>
-                Անուն
-                <input type="text" name="firstName"
-                       placeholder="Ձեր անունը" required>
-            </label>
+    <p class="rsvp-lead">
+      Խնդրում ենք հաստատել Ձեր մասնակցությունը։
+    </p>
 
-            <label>
-                Ազգանուն
-                <input type="text" name="lastName"
-                       placeholder="Ձեր ազգանունը" required>
-            </label>
+    <form id="rsvpForm">
 
-            <fieldset class="radio-group">
+      <label class="field">
+        Անուն, ազգանուն
+        <input type="text" name="name"
+          placeholder="Ձեր անունը և ազգանունը" required>
+      </label>
 
-                <legend>Կներկայանա՞ք մեր հարսանիքին</legend>
+      <fieldset class="field">
+        <legend>Ո՞ւմ կողմից եք հրավիրված</legend>
 
-                <label class="radio-option">
-                    <input type="radio" name="attendance"
-                           value="Այո, սիրով ներկա կլինեմ" required>
-                    Այո՛, սիրով ներկա կլինեմ
-                </label>
+        <label class="choice">
+          <input type="radio" name="invitedBy"
+            value="Լևոնի կողմից" required>
+          Լևոնի կողմից
+        </label>
 
-                <label class="radio-option">
-                    <input type="radio" name="attendance"
-                           value="Ցավոք, չեմ կարողանա">
-                    Ցավոք, չեմ կարողանա
-                </label>
+        <label class="choice">
+          <input type="radio" name="invitedBy"
+            value="Մերիի կողմից">
+          Մերիի կողմից
+        </label>
+      </fieldset>
 
-            </fieldset>
+      <fieldset class="field">
+        <legend>Կմիանա՞ք մեզ այդ օրը</legend>
 
-            <label>
-                Հյուրերի քանակը
+        <label class="choice">
+          <input type="radio" name="attendance"
+            value="Այո, սիրով կմիանամ" required>
+          Այո, սիրով կմիանամ։
+        </label>
 
-                <select name="guests" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </label>
+        <label class="choice">
+          <input type="radio" name="attendance"
+            value="Ցավոք, չեմ կարողանա ներկա լինել">
+          Ցավոք, չեմ կարողանա ներկա լինել։
+        </label>
+      </fieldset>
 
-            <label>
-                Ո՞ւմ կողմից եք հրավիրված
+      <label class="field" id="guestCountField">
+        Քանի՞ հոգով եք մասնակցելու
+        <input type="number" name="guests"
+          min="1" max="30" step="1"
+          placeholder="Նշեք հյուրերի թիվը">
+      </label>
 
-                <select name="invitedBy" required>
-                    <option value="">Ընտրել</option>
-                    <option value="Լևոնի կողմից">Լևոնի կողմից</option>
-                    <option value="Մերիի կողմից">Մերիի կողմից</option>
-                    <option value="Երկուսիս կողմից">Երկուսիս կողմից</option>
-                </select>
-            </label>
+      <label class="field">
+        Լրացուցիչ նշում
+        <textarea name="note" rows="3"
+          placeholder="Ձեր հաղորդագրությունը (ըստ ցանկության)"></textarea>
+      </label>
 
-            <button type="submit" class="rsvp-button">
-                ՈՒՂԱՐԿԵԼ ՊԱՏԱՍԽԱՆԸ
-            </button>
+      <button class="submit-button" type="submit">
+        Հաստատել
+      </button>
 
-            <p class="rsvp-message" id="rsvpMessage"></p>
+      <p class="form-status" id="formStatus"></p>
 
-        </form>
+    </form>
+  </section>
 
-    </section>
+  <!-- FOOTER -->
 
-
-    <!-- MUSIC -->
-
-    <section class="music section">
-
-        <p class="eyebrow">OUR SONG</p>
-
-        <h2 class="section-heading">Une Vie d'Amour</h2>
-
-        <div class="decorative-line">♫</div>
-
-        <p class="music-description">
-            A melody for our forever.
-        </p>
-
-        <audio id="weddingMusic" controls preload="none">
-            <source src="./our-song.mp3" type="audio/mpeg">
-            Ձեր դիտարկիչը չի աջակցում աուդիո նվագարկմանը։
-        </audio>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-
-        <p class="eyebrow">WITH LOVE</p>
-
-        <h2 class="footer-names">Levon & Mery</h2>
-
-        <p class="footer-date">06 . 12 . 2026</p>
-
-        <div class="decorative-line">✧</div>
-
-        <p class="eyebrow">A LOVE LETTER TO FOREVER</p>
-
-    </footer>
+  <footer class="footer">
+    <p>
+      Շնորհակալ ենք, որ մեր օրը<br>
+      կիսում եք մեզ հետ։
+    </p>
+    <span>Լևոն և Մերի · 06.12.2026</span>
+  </footer>
 
 </main>
 
+<!-- MUSIC -->
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
+<audio id="weddingMusic" loop>
+  <source src="assets/our-song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton"
+  aria-label="Միացնել կամ անջատել երաժշտությունը">♫</button>
 
 <script>
 
-/* OPENING CARD */
+/* ENVELOPE OPENING */
 
-const opening = document.getElementById("opening");
+const intro = document.getElementById("intro");
 const invitation = document.getElementById("invitation");
-const openButton = document.getElementById("openButton");
+const seal = document.getElementById("openSeal");
+const skip = document.getElementById("skipIntro");
+const music = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
 
-openButton.addEventListener("click", function() {
+let opened = false;
 
-    opening.classList.add("opened");
+function openInvitation() {
+  if (opened) return;
+  opened = true;
 
-    setTimeout(function() {
+  intro.classList.add("open");
 
-        opening.classList.add("closed");
-        invitation.classList.add("visible");
+  setTimeout(() => {
+    invitation.classList.add("visible");
+    invitation.setAttribute("aria-hidden", "false");
 
-        setTimeout(function() {
-            opening.style.display = "none";
-        }, 1200);
+    invitation.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    musicButton.classList.add("visible");
 
-    }, 1600);
+    music.play().catch(() => {
+      // Browser may require the visitor to press the music button.
+    });
 
+  }, 2100);
+}
+
+seal.addEventListener("click", openInvitation);
+skip.addEventListener("click", openInvitation);
+
+
+/* MUSIC BUTTON */
+
+musicButton.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    musicButton.textContent = "♫";
+  } else {
+    music.pause();
+    musicButton.textContent = "♪";
+  }
 });
 
 
-/* LIVE COUNTDOWN - ARMENIA TIME */
+/* COUNTDOWN */
 
 const weddingDate =
-    new Date("2026-12-06T14:00:00+04:00").getTime();
+  new Date("2026-12-06T14:00:00+04:00").getTime();
 
 function updateCountdown() {
+  const now = Date.now();
+  let difference = Math.max(0, weddingDate - now);
 
-    const distance = weddingDate - Date.now();
+  const days = Math.floor(difference / 86400000);
+  const hours = Math.floor((difference % 86400000) / 3600000);
+  const minutes = Math.floor((difference % 3600000) / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
 
-    const elements = {
-        days: document.getElementById("days"),
-        hours: document.getElementById("hours"),
-        minutes: document.getElementById("minutes"),
-        seconds: document.getElementById("seconds")
-    };
+  document.getElementById("days").textContent =
+    String(days).padStart(3, "0");
 
-    if (distance <= 0) {
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
 
-        Object.values(elements).forEach(element => {
-            element.textContent = "00";
-        });
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
 
-        return;
-    }
-
-    const values = {
-        days: Math.floor(distance / 86400000),
-        hours: Math.floor((distance % 86400000) / 3600000),
-        minutes: Math.floor((distance % 3600000) / 60000),
-        seconds: Math.floor((distance % 60000) / 1000)
-    };
-
-    Object.entries(values).forEach(([key, value]) => {
-        elements[key].textContent =
-            String(value).padStart(2, "0");
-    });
-
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-/* RSVP EMAIL */
+/* ROUTE ANIMATION */
 
-document.getElementById("rsvpForm")
-.addEventListener("submit", function(event) {
+const routeSection = document.getElementById("routeSection");
 
-    event.preventDefault();
+const routeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      routeSection.classList.add("show-route");
+      routeObserver.unobserve(routeSection);
+    }
+  });
+}, { threshold: 0.2 });
 
-    const data = new FormData(this);
+routeObserver.observe(routeSection);
 
-    const message =
-        "Wedding RSVP - Levon & Mery\n\n" +
-        "Անուն: " + data.get("firstName") + "\n" +
-        "Ազգանուն: " + data.get("lastName") + "\n" +
-        "Մասնակցություն: " + data.get("attendance") + "\n" +
-        "Հյուրերի քանակ: " + data.get("guests") + "\n" +
-        "Հրավիրող կողմ: " + data.get("invitedBy");
 
-    const email = "YOUR_EMAIL@example.com";
+/* RSVP GUEST COUNT */
 
-    const subject = encodeURIComponent(
-        "Wedding RSVP - Levon & Mery"
-    );
+const guestCountField =
+  document.getElementById("guestCountField");
 
-    const body = encodeURIComponent(message);
+document.querySelectorAll('input[name="attendance"]')
+  .forEach(input => {
+    input.addEventListener("change", () => {
+      const selected =
+        document.querySelector('input[name="attendance"]:checked');
 
-    const mailto =
-        "mailto:" + email +
-        "?subject=" + subject +
-        "&body=" + body;
+      const attending =
+        selected && selected.value.startsWith("Այո");
 
-    document.getElementById("rsvpMessage").style.display = "block";
+      guestCountField.hidden = !attending;
 
-    document.getElementById("rsvpMessage").textContent =
-        "Շնորհակալություն։ Բացվում է Ձեր էլեկտրոնային փոստը։";
+      guestCountField.querySelector("input").required =
+        Boolean(attending);
+    });
+  });
 
-    window.location.href = mailto;
 
+/* RSVP FORM */
+
+const RSVP_ENDPOINT = "";
+
+const form = document.getElementById("rsvpForm");
+const formStatus = document.getElementById("formStatus");
+
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  if (!RSVP_ENDPOINT) {
+    formStatus.textContent =
+      "Հարցաթերթիկը պատրաստ է։ Պատասխաններ ստանալու համար անհրաժեշտ է միացնել RSVP ծառայությունը։";
+    return;
+  }
+
+  const button = form.querySelector("button");
+  button.disabled = true;
+  button.textContent = "Ուղարկվում է…";
+
+  try {
+    const response = await fetch(RSVP_ENDPOINT, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    });
+
+    if (!response.ok) throw new Error("Submission failed");
+
+    form.reset();
+
+    guestCountField.hidden = false;
+
+    formStatus.textContent =
+      "Շնորհակալություն պատասխանի համար։ Սիրով սպասում ենք Ձեզ։";
+
+  } catch (error) {
+    formStatus.textContent =
+      "Չհաջողվեց ուղարկել պատասխանը։ Խնդրում ենք կրկին փորձել։";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Հաստատել";
+  }
 });
 
 </script>
