@@ -893,7 +893,48 @@ button, input, textarea { font: inherit; }
     transform: rotate(-3deg);
     z-index: 2;
   }
+/* MOBILE POLAROID ADJUSTMENT */
 
+.memories {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.memories > div:first-child {
+  min-width: 0;
+}
+
+.polaroids {
+  width: 100%;
+  min-width: 0;
+  height: 390px;
+  overflow: hidden;
+}
+
+.polaroid {
+  width: 43%;
+  padding: 7px 7px 22px;
+}
+
+.polaroid img {
+  height: 150px;
+}
+
+.polaroid.one {
+  left: 2%;
+  top: 8%;
+}
+
+.polaroid.two {
+  right: 2%;
+  top: 100px;
+}
+
+.polaroid.three {
+  left: 10%;
+  top: 200px;
+}
 }
 /* DESKTOP POLAROID SIZE */
 
