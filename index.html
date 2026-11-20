@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hy">
 <head>
@@ -418,8 +419,7 @@ button, input, textarea { font: inherit; }
   font-size: 12px;
   margin-top: 10px;
 }
-
-.arrow-icon {
+  .arrow-icon {
   position: relative;
   display: inline-block;
   width: 10px;
@@ -462,70 +462,68 @@ button, input, textarea { font: inherit; }
   padding: 10px;
 }
 
-/* POLAROID PHOTOS — SAME COMPOSITION ON ALL SCREENS */
+/* POLAROID PHOTOS */
 
 .memories {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(12px, 2.8vw, 25px);
-  align-items: center;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 25px;
+  align-items: start;
 }
 
 .memory-title {
-  font-size: clamp(21px, 3.8vw, 42px);
-  line-height: 1.55;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.65;
   font-weight: 300;
   text-align: left;
-  margin: 15px 0 0;
+  margin-top: 15px;
 }
 
 .polaroids {
   position: relative;
+  height: 340px;
+  max-width: 440px;
   width: 100%;
-  max-width: 560px;
-  height: clamp(270px, 34vw, 430px);
-  margin: 0 auto;
 }
 
 .polaroid {
   position: absolute;
-  width: 64%;
-  padding: clamp(5px, .7vw, 8px) clamp(5px, .7vw, 8px) clamp(16px, 2vw, 25px);
-  box-sizing: border-box;
+  width: 39%;
+  padding: 7px 7px 25px;
   background: #fffefa;
   box-shadow: 0 8px 25px #43372225;
   border: 1px solid #eee9df;
 }
 
 .polaroid img {
-  display: block;
   width: 100%;
-  height: clamp(105px, 17vw, 220px);
+  height: 145px;
   object-fit: cover;
   filter: grayscale(1);
 }
 
 .polaroid.one {
-  left: 3%;
+  left: 8%;
   top: 5%;
   transform: rotate(-8deg);
   z-index: 1;
 }
 
 .polaroid.two {
-  left: 39%;
+  left: 42%;
   top: 18%;
   transform: rotate(6deg);
   z-index: 3;
 }
 
 .polaroid.three {
-  left: 20%;
+  left: 23%;
   top: 48%;
   transform: rotate(-4deg);
   z-index: 2;
 }
-  /* COUNTDOWN */
+
+/* COUNTDOWN */
 
 .countdown-section { text-align: center; }
 
@@ -648,226 +646,287 @@ button, input, textarea { font: inherit; }
   color: var(--gold);
 }
 
+.form-status {
+  min-height: 20px;
+  text-align: center;
+  color: var(--gold);
+  font-size: 13px;
+}
+
 /* FOOTER */
 
 .footer {
-  padding: 35px 20px 55px;
   text-align: center;
+  padding: 60px 20px 70px;
   border-top: 1px solid var(--line);
 }
 
 .footer p {
-  font-size: 13px;
-  color: var(--brown-light);
-  line-height: 1.8;
+  font-size: 19px;
+  line-height: 1.9;
 }
 
-/* MUSIC BUTTON */
+.footer span {
+  font: 11px var(--sans);
+  letter-spacing: .12em;
+  color: var(--brown-light);
+}
 
 .music-button {
   position: fixed;
-  z-index: 110;
-  right: 24px;
-  bottom: 24px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  width: 43px;
+  height: 43px;
   border: 1px solid var(--gold-light);
-  background: #fffefa;
+  border-radius: 50%;
+  background: var(--paper-light);
   color: var(--gold);
-  box-shadow: 0 3px 12px #59463318;
   cursor: pointer;
+  display: none;
+}
+
+.music-button.visible { display: block; }
+
+/* MOBILE */
+
+@media(max-width:650px) {
+  .section {
+    width: calc(100% - 34px);
+    padding: 70px 0;
+  }
+
+  .envelope-stage { height: 330px; }
+  .envelope { height: 215px; }
+  .letter {
+    height: 260px;
+    padding: 20px 10px;
+  }
+  .letter .greeting { font-size: 16px; }
+  .letter p { font-size: 13px; }
+  .wax-seal { width: 78px; height: 78px; }
+  .wax-seal svg { width: 57px; }
+
+  .calendar { padding: 24px 8px; }
+  .weekdays { font-size: 9px; gap: 3px; }
+  .days { gap: 3px; row-gap: 9px; }
+  .day { font-size: 12px; }
+
+  .route-line { width: 100px; }
+  .stop { gap: 12px; min-height: 215px; }
+  .stop-art { padding: 5px; }
+  .stop-art img { height: 105px; }
+  .stop-time { font-size: 24px; }
+  .stop-copy h3 { font-size: 15px; }
+  .stop-copy p { font-size: 10px; }
+
+.memories {
+  position: relative;
+  display: block;
+  min-height: 480px;
+  padding-top: 45px;
+  overflow: visible;
+}
+
+.memories > div:first-child {
+  position: static;
+}
+
+.memories .eyebrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72%;
+  text-align: center;
+  font-size: 9px;
+}
+
+.memory-title {
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  width: 43%;
+  text-align: left;
+  line-height: 1.5;
+  font-size: clamp(22px, 5vw, 28px);
+  margin: 0;
+}
+
+.polaroids {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 72%;
+  height: 350px;
+  margin: 0;
+}
+
+.polaroid {
+  position: absolute;
+  width: 65%;
+  padding: 6px 6px 20px;
+  background: #fffefa;
+  box-shadow: 0 8px 25px #43372225;
+  border: 1px solid #eee9df;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.polaroid.one {
+  left: 0;
+  top: 0;
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+
+.polaroid.two {
+  left: 32%;
+  top: 24%;
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+.polaroid.three {
+  left: 12%;
+  top: 58%;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+  .countdown { gap: 8px; }
+  .countdown div { min-width: 42px; }
+  .countdown strong { font-size: 23px; }
+  .countdown i { height: 27px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+.memories {
   display: grid;
-  place-items: center;
-  font-size: 25px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 25px;
+  align-items: center;
+  background: #D8C9BC;
+  padding: 65px 35px;
+  width: min(900px, calc(100% - 38px));
 }
 
-.music-button.playing {
-  animation: musicPulse 2s infinite;
+.memories > div:first-child .eyebrow {
+  text-align: left;
+  margin-bottom: 35px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--brown-light);
+  letter-spacing: .2em;
 }
 
-@keyframes musicPulse {
-  0%, 100% { box-shadow: 0 3px 12px #59463318; }
-  50% { box-shadow: 0 3px 18px #b18b5266; }
+.memory-title {
+  font-size: clamp(25px, 3.5vw, 38px);
+  line-height: 1.65;
+  text-align: left;
+  margin: 0;
 }
 
-/* DESKTOP POLAROID SIZE */
+.polaroids {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 460px;
+}
 
-@media screen and (min-width: 651px) {
-  .memories {
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 25px;
-  }
+.polaroid {
+  position: absolute;
+  width: 43%;
+  padding: 8px 8px 25px;
+  background: #fffefa;
+  border: 1px solid #eee9df;
+  box-shadow: 0 9px 25px #43372225;
+}
 
-  .polaroids {
-    max-width: 560px;
-    height: 430px;
-  }
+.polaroid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  filter: grayscale(1);
+}
 
-  .polaroid {
-    width: 64%;
-    padding: 8px 8px 25px;
-  }
+.polaroid.one {
+  left: 0;
+  top: 0;
+  transform: rotate(-5deg);
+  z-index: 1;
+}
 
-  .polaroid img {
-    height: 220px;
-  }
+.polaroid.two {
+  right: 0;
+  top: 100px;
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+.polaroid.three {
+  left: 18%;
+  top: 225px;
+  transform: rotate(-3deg);
+  z-index: 2;
 }
 
 /* MOBILE */
 
-@media screen and (max-width: 650px) {
-  .section {
-    width: calc(100% - 38px);
-    padding: 65px 0;
-  }
-
-  .intro {
-    min-height: 100svh;
-    padding: 35px 15px;
-  }
-
-  .envelope-stage {
-    width: 90vw;
-    height: 330px;
-  }
-
-  .envelope {
-    height: 220px;
-  }
-
-  .letter {
-    height: 260px;
-    padding: 20px 12px;
-  }
-
-  .hero {
-    padding-top: 40px;
-  }
-
-  .hero-photo {
-    margin: 25px auto;
-  }
-
-  .hero-photo img {
-    max-height: 620px;
-  }
-
-  .stop {
-    gap: 15px;
-    min-height: 220px;
-  }
-
-  .stop-art {
-    width: 100%;
-    padding: 5px;
-  }
-
-  .stop-art img {
-    height: 115px;
-  }
-
-  .stop-copy h3 {
-    font-size: 16px;
-  }
-
-  .stop-time {
-    font-size: 25px;
-  }
-
-  .stop-copy p {
-    font-size: 11px;
-  }
-
-  .route-line {
-    width: 100px;
-  }
-
-  /* Keep the same two-column composition as desktop */
+@media(max-width:650px) {
   .memories {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.8fr 1.2fr;
     gap: 8px;
-    align-items: center;
-    width: calc(100% - 38px);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 35px 0;
-    overflow: hidden;
+    padding: 45px 16px;
+    min-height: 510px;
+  }
+
+  .memories > div:first-child .eyebrow {
+    font-size: 8px;
+    letter-spacing: .13em;
+    margin-bottom: 65px;
   }
 
   .memory-title {
-    font-size: clamp(18px, 5vw, 25px);
+    font-size: clamp(21px, 5vw, 27px);
     line-height: 1.65;
-    margin: 0;
-    min-width: 0;
-    text-align: left;
+    margin-top: 0;
   }
 
   .polaroids {
+    height: 390px;
     width: 100%;
-    min-width: 0;
-    height: 300px;
-    overflow: hidden;
+    margin-top: 10px;
   }
 
   .polaroid {
-    width: 72%;
-    padding: 5px 5px 16px;
+    width: 67%;
+    padding: 5px 5px 17px;
   }
 
   .polaroid img {
-    width: 100%;
     height: 115px;
-    object-fit: cover;
   }
 
   .polaroid.one {
-    left: 2%;
-    top: 5px;
-    transform: rotate(-6deg);
+    left: 0;
+    top: 0;
   }
 
   .polaroid.two {
-    left: 27%;
-    top: 75px;
-    transform: rotate(4deg);
+    right: 0;
+    top: 105px;
   }
 
   .polaroid.three {
     left: 12%;
-    top: 160px;
-    transform: rotate(-3deg);
-  }
-
-  .countdown {
-    gap: 8px;
-  }
-
-  .countdown div {
-    min-width: 42px;
-  }
-
-  .countdown strong {
-    font-size: 23px;
-  }
-
-  .countdown i {
-    height: 27px;
-  }
-
-  .music-button {
-    right: 16px;
-    bottom: 18px;
-    width: 52px;
-    height: 52px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    scroll-behavior: auto !important;
-    transition: none !important;
+    top: 220px;
   }
 }
 </style>
@@ -888,96 +947,77 @@ button, input, textarea { font: inherit; }
 
   <div class="envelope-stage">
 
-    <div class="envelope">
+    <div class="letter" id="letter">
+      <div class="letter-line"></div>
 
-      <div class="envelope-back"></div>
+      <p class="greeting">
+        Մեր շատ սիրելի<br>
+        հարազատներ և ընկերներ,
+      </p>
 
-      <div class="letter" id="letter">
-        <div class="letter-line"></div>
-        <p class="greeting">
-          Մեր շատ սիրելի հարազատներ և ընկերներ,
-        </p>
-        <p>
-          սիրով հրավիրում ենք Ձեզ՝ մեզ հետ կիսելու
-          մեր կյանքի ամենակարևոր օրը։
-        </p>
-      </div>
+      <p>
+        սիրով հրավիրում ենք Ձեզ՝<br>
+        մեզ հետ կիսելու մեր կյանքի<br>
+        ամենակարևոր օրը։
+      </p>
 
-      <div class="envelope-pocket"></div>
-
-      <div class="envelope-flap"></div>
-
-      <button class="wax-seal" id="openSeal"
-        aria-label="Բացել հրավիրատոմսը">
-        <svg viewBox="0 0 70 70">
-          <path d="M35 53 C20 43 12 34 17 25
-                   C21 17 31 20 35 29
-                   C39 20 49 17 53 25
-                   C58 34 50 43 35 53Z"/>
-          <path d="M18 48 Q35 60 52 48"/>
-          <path d="M23 54 Q35 63 47 54"/>
-        </svg>
-      </button>
-
+      <div class="letter-line"></div>
     </div>
 
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-pocket"></div>
+      <div class="envelope-flap" id="envelopeFlap"></div>
+
+      <button class="wax-seal" id="openSeal"
+        aria-label="Բացել հրավերը՝ սեղմելով կնիքին">
+
+        <svg viewBox="0 0 100 100">
+          <path d="M28 65 C18 57 20 40 32 33 C39 29 44 34 50 44 C56 34 61 29 68 33 C80 40 82 57 72 65 C65 72 57 75 50 80 C43 75 35 72 28 65Z"/>
+          <path d="M49 44 C43 32 34 31 29 39 C24 48 34 57 49 65 M51 44 C57 32 66 31 71 39 C76 48 66 57 51 65"/>
+          <path d="M24 68 Q50 79 76 68 M30 75 Q50 84 70 75"/>
+        </svg>
+
+      </button>
+    </div>
   </div>
 
-  <p class="tap-hint">Սեղմեք կնիքին՝ հրավիրատոմսը բացելու համար</p>
-
-  <button class="skip-intro" id="skipIntro">
-    Անցնել հրավիրատոմսին
-  </button>
+  <p class="tap-hint">Հրավերը տեսնելու համար՝ սեղմեք կնիքի վրա</p>
+  <button class="skip-intro" id="skipIntro">Անցնել հրավերին</button>
 
 </section>
 
-<!-- MAIN INVITATION -->
+<!-- MAIN WEBSITE -->
 
-<main class="invitation" id="invitation" aria-hidden="true">
+<main class="invitation" id="invitation">
 
-  <!-- HERO -->
+  <!-- HERO PHOTO -->
 
   <section class="section hero">
-
-    <p class="eyebrow">ՄԵՐ ՀԱՏՈՒԿ ՕՐԸ</p>
-
-    <h2 class="hero-names">Լևոն և Մերի</h2>
-
-    <p class="hero-date">06 · 12 · 2026</p>
+    <p class="eyebrow">ՄԵՐ ՊԱՏՄՈՒԹՅՈՒՆԸ</p>
 
     <figure class="hero-photo">
       <img src="hero-couple.jpg" alt="Լևոն և Մերի">
     </figure>
 
-    <p>
-      Մեր կյանքի ամենակարևոր օրը ցանկանում ենք
-      կիսել Ձեզ հետ։
-    </p>
-
+    <h2 class="hero-names">Լևոն և Մերի</h2>
+    <p class="hero-date">06 · 12 · 2026</p>
   </section>
 
   <!-- CALENDAR -->
 
   <section class="section calendar-section">
-
     <p class="eyebrow">ՊԱՀՊԱՆԵՔ ԱՅՍ ՕՐԸ</p>
-
     <h2 class="section-title">Դեկտեմբեր 2026</h2>
 
     <div class="calendar">
-
       <div class="weekdays">
-        <span>Երկ</span>
-        <span>Երք</span>
-        <span>Չոր</span>
-        <span>Հնգ</span>
-        <span>Ուրբ</span>
-        <span>Շաբ</span>
-        <span>Կիր</span>
+        <span>Երկ</span><span>Երք</span><span>Չրք</span>
+        <span>Հնգ</span><span>Ուրբ</span><span>Շբթ</span><span>Կիր</span>
       </div>
 
       <div class="days">
-        <span class="day"></span>
+        <span></span>
         <span class="day">1</span>
         <span class="day">2</span>
         <span class="day">3</span>
@@ -985,96 +1025,75 @@ button, input, textarea { font: inherit; }
         <span class="day">5</span>
         <span class="day heart-day">6</span>
 
-        <span class="day">7</span>
-        <span class="day">8</span>
-        <span class="day">9</span>
-        <span class="day">10</span>
-        <span class="day">11</span>
-        <span class="day">12</span>
+        <span class="day">7</span><span class="day">8</span>
+        <span class="day">9</span><span class="day">10</span>
+        <span class="day">11</span><span class="day">12</span>
         <span class="day">13</span>
 
-        <span class="day">14</span>
-        <span class="day">15</span>
-        <span class="day">16</span>
-        <span class="day">17</span>
-        <span class="day">18</span>
-        <span class="day">19</span>
+        <span class="day">14</span><span class="day">15</span>
+        <span class="day">16</span><span class="day">17</span>
+        <span class="day">18</span><span class="day">19</span>
         <span class="day">20</span>
 
-        <span class="day">21</span>
-        <span class="day">22</span>
-        <span class="day">23</span>
-        <span class="day">24</span>
-        <span class="day">25</span>
-        <span class="day">26</span>
+        <span class="day">21</span><span class="day">22</span>
+        <span class="day">23</span><span class="day">24</span>
+        <span class="day">25</span><span class="day">26</span>
         <span class="day">27</span>
 
-        <span class="day">28</span>
-        <span class="day">29</span>
-        <span class="day">30</span>
-        <span class="day">31</span>
+        <span class="day">28</span><span class="day">29</span>
+        <span class="day">30</span><span class="day">31</span>
       </div>
-
     </div>
-
   </section>
 
-  <!-- WEDDING ROUTE -->
+  <!-- WEDDING DAY ROUTE -->
 
   <section class="section route-section" id="routeSection">
-
-    <p class="eyebrow">ՄԵՐ ՕՐԸ</p>
-    <h2 class="section-title">Օրվա ծրագիրը</h2>
+    <p class="eyebrow">ՄԵՐ ՀԱՐՍԱՆԵԿԱՆ ՕՐԸ</p>
+    <h2 class="section-title">Մեր օրվա ճանապարհը</h2>
 
     <div class="route-layout">
 
-      <svg class="route-line" viewBox="0 0 180 600"
-        preserveAspectRatio="none" aria-hidden="true">
+      <svg class="route-line" viewBox="0 0 260 700" preserveAspectRatio="none">
         <path class="route-path"
-          d="M90 0 C20 100 160 160 90 260
-             S20 420 90 600"/>
+          d="M130 20 C20 85 25 155 130 210 S235 330 130 385 S25 505 130 560 S235 640 130 680"/>
       </svg>
 
-      <div class="stop church">
+      <article class="stop church">
+        <div class="stop-art">
+          <img src="church-sketch.jpg" alt="Սուրբ Հովհաննես եկեղեցի">
+        </div>
 
         <div class="stop-copy">
           <span class="stop-time">14:00</span>
-          <h3>Մեղրիի Սուրբ Հովհաննես եկեղեցի</h3>
-          <p>Քաղաք Մեղրի, Փոքր թաղ</p>
-
+          <h3>Պսակադրություն</h3>
+          <p>Սուրբ Հովհաննես եկեղեցի</p>
+          <p>Մեղրի, Փոքր թաղ</p>
           <a class="map-link"
-            href="https://www.google.com/maps/search/?api=1&query=38.9076206,46.2384544"
-            target="_blank" rel="noopener">
-            Քարտեզ <span class="arrow-icon"></span>
-          </a>
+      href="https://www.google.com/maps/search/?api=1&query=V6WR%2B9W7%2C+Meghri+Monastery%2C+Meghri+3401"
+   target="_blank" rel="noopener">Քարտեզ <span class="arrow-icon"></span></a>
         </div>
-
-        <figure class="stop-art">
-          <img src="church-sketch.jpg"
-            alt="Մեղրիի Սուրբ Հովհաննես եկեղեցի">
-        </figure>
-
-      </div>
+      </article>
 
       <div class="route-middle">✦</div>
 
-      <div class="stop restaurant">
-
-        <figure class="stop-art">
-          <img src="restaurant-sketch.jpg"
-            alt="Մարիշոկ ռեստորան">
-        </figure>
+      <article class="stop restaurant">
+        <div class="stop-art">
+          <img src="restaurant-sketch.jpg" alt="Մարիշոկ ռեստորան">
+        </div>
 
         <div class="stop-copy">
           <span class="stop-time">17:00</span>
-          <h3>«Մարիշոկ» ռեստորան</h3>
-          <p>Քաղաք Ագարակ</p>
+          <h3>Հարսանեկան խնջույք</h3>
+          <p>«Մարիշոկ» ռեստորան</p>
+          <p>Ագարակ</p>
+          <a class="map-link"
+             href="https://www.google.com/maps/search/?api=1&query=Մարիշոկ+ռեստորան+Ագարակ"
+             target="_blank" rel="noopener">Քարտեզ <span class="arrow-icon"></span></a>
         </div>
-
-      </div>
+      </article>
 
     </div>
-
   </section>
 
   <!-- POLAROID PHOTOS -->
@@ -1105,7 +1124,6 @@ button, input, textarea { font: inherit; }
       </figure>
 
     </div>
-
   </section>
 
   <!-- COUNTDOWN PHOTO AND TIMER -->
@@ -1206,7 +1224,6 @@ button, input, textarea { font: inherit; }
       <p class="form-status" id="formStatus"></p>
 
     </form>
-
   </section>
 
   <!-- FOOTER -->
@@ -1299,7 +1316,7 @@ function updateCountdown() {
   const seconds = Math.floor((difference % 60000) / 1000);
 
   document.getElementById("days").textContent =
-    String(days).padStart(2, "0");
+  String(days).padStart(2, "0");
 
   document.getElementById("hours").textContent =
     String(hours).padStart(2, "0");
