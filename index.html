@@ -721,21 +721,56 @@ button, input, textarea { font: inherit; }
   .stop-copy h3 { font-size: 15px; }
   .stop-copy p { font-size: 10px; }
 
- .memories {
-  grid-template-columns: 1fr;
+.memories {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
   gap: 5px;
+  align-items: center;
+  min-height: 370px;
 }
 
 .memory-title {
   text-align: left;
-  line-height: 1.45;
-  margin: 10px 0 15px;
+  line-height: 1.5;
+  font-size: clamp(23px, 5vw, 30px);
+  margin: 100px 0 0;
 }
 
 .polaroids {
-  height: 300px;
-  max-width: 380px;
-  margin: 0 auto;
+  position: relative;
+  height: 310px;
+  width: 100%;
+  margin: 0;
+}
+
+.polaroid {
+  width: 68%;
+  padding: 6px 6px 20px;
+}
+
+.polaroid img {
+  height: 115px;
+}
+
+.polaroid.one {
+  left: 0;
+  top: 3%;
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+.polaroid.two {
+  left: 30%;
+  top: 22%;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+
+.polaroid.three {
+  left: 10%;
+  top: 53%;
+  transform: rotate(-3deg);
+  z-index: 2;
 }
 
 .polaroid img {
