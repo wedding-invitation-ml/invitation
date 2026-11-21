@@ -901,6 +901,40 @@ button, input, textarea { font: inherit; }
     top: 62% !important;
   }
 }
+/* MAP ARROW — VISIBLE ON ALL SCREENS */
+
+.arrow-icon {
+  position: relative !important;
+  display: inline-block !important;
+  width: 11px !important;
+  height: 11px !important;
+  margin-left: 5px !important;
+  vertical-align: 1px !important;
+  color: #b18b52 !important;
+}
+
+.arrow-icon::before {
+  content: "" !important;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+
+.arrow-icon::after {
+  content: "" !important;
+  position: absolute;
+  left: 1px;
+  bottom: 2px;
+  width: 9px;
+  height: 1px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+}
 </style>
 </head>
 
