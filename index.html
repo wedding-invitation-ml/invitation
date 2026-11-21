@@ -714,42 +714,49 @@ button, input, textarea { font: inherit; }
 @media(prefers-reduced-motion:reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
-/* POLAROID SECTION — REFINED DESIGN */
+/* POLAROID — FINAL LAYOUT */
 
-/* Ընդհանուր ֆոն՝ բոլոր էկրանների համար */
+/* Shared background */
 .memories {
   background: transparent !important;
 }
 
 /* DESKTOP */
 @media screen and (min-width: 651px) {
+
   .memories {
     display: grid;
     grid-template-columns: .8fr 1.2fr;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
     padding: 65px 20px;
-    overflow: visible;
+  }
+
+  .memories > div:first-child .eyebrow {
+    text-align: left;
+    margin: 0 0 35px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #a99583;
   }
 
   .memory-title {
     text-align: left;
+    margin: 0;
     line-height: 1.65;
-    margin-top: 15px;
   }
 
   .polaroids {
     position: relative;
     width: 100%;
-    max-width: 440px;
-    height: 370px;
+    max-width: 520px;
+    height: 440px;
     margin: auto;
   }
 
   .polaroid {
     position: absolute;
-    width: 39%;
-    padding: 7px 7px 24px;
+    width: 43%;
+    padding: 8px 8px 25px;
     background: #fffefa;
     border: 1px solid #eee9df;
     box-shadow: 0 8px 22px #43372220;
@@ -757,29 +764,28 @@ button, input, textarea { font: inherit; }
 
   .polaroid img {
     width: 100%;
-    height: 145px;
+    height: 175px;
     object-fit: cover;
     filter: grayscale(1);
   }
 
   .polaroid.one {
-    left: 5%;
-    top: 3%;
+    left: 2%;
+    top: 2%;
     transform: rotate(-7deg);
     z-index: 1;
   }
 
   .polaroid.two {
-    right: 5%;
-    left: auto;
-    top: 18%;
-    transform: rotate(6deg);
+    left: 48%;
+    top: 22%;
+    transform: rotate(5deg);
     z-index: 3;
   }
 
   .polaroid.three {
-    left: 23%;
-    top: 49%;
+    left: 17%;
+    top: 53%;
     transform: rotate(-4deg);
     z-index: 2;
   }
@@ -787,6 +793,7 @@ button, input, textarea { font: inherit; }
 
 /* MOBILE */
 @media screen and (max-width: 650px) {
+
   .memories {
     position: relative;
     display: block;
@@ -805,10 +812,8 @@ button, input, textarea { font: inherit; }
     top: 55px;
     left: 18px;
     right: 18px;
-    width: auto;
     text-align: left;
     font-size: 9px;
-    letter-spacing: .2em;
     padding-bottom: 12px;
     border-bottom: 1px solid #e8dfd0;
   }
@@ -821,7 +826,6 @@ button, input, textarea { font: inherit; }
     margin: 0;
     font-size: clamp(21px, 5.5vw, 27px);
     line-height: 1.65;
-    text-align: left;
   }
 
   .polaroids {
@@ -835,7 +839,7 @@ button, input, textarea { font: inherit; }
 
   .polaroid {
     position: absolute;
-    width: 72%;
+    width: 68%;
     padding: 5px 5px 18px;
     background: #fffefa;
     border: 1px solid #eee9df;
@@ -857,8 +861,7 @@ button, input, textarea { font: inherit; }
   }
 
   .polaroid.two {
-    left: auto;
-    right: 0;
+    left: 25%;
     top: 27%;
     transform: rotate(5deg);
     z-index: 3;
@@ -866,7 +869,7 @@ button, input, textarea { font: inherit; }
 
   .polaroid.three {
     left: 5%;
-    top: 59%;
+    top: 58%;
     transform: rotate(-3deg);
     z-index: 2;
   }
