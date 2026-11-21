@@ -207,22 +207,46 @@ button, input, textarea { font: inherit; }
 
 .wax-seal {
   position: absolute;
-  z-index: 6;
+  z-index: 10;
   left: 50%;
-  top: 45%;
+  top: 65%;
   transform: translate(-50%, -50%);
-  width: 88px;
-  height: 88px;
-  border: 0;
-  border-radius: 47% 52% 49% 51%;
-  background: radial-gradient(circle at 35% 28%, #e1c28b, #b58a4b 55%, #88602e);
-  box-shadow: inset 0 2px 4px #fff8,
-              inset 0 -4px 8px #71491d66,
-              0 5px 12px #6c4a243b;
+  width: 82px;
+  height: 82px;
+  border: 1px solid #d6b778;
+  border-radius: 48% 52% 50% 48%;
+  background:
+    radial-gradient(circle at 32% 25%,
+      #f0d49e 0%,
+      #d7b16d 35%,
+      #b48746 72%,
+      #95652f 100%);
+  box-shadow:
+    inset 0 2px 5px #fff9,
+    inset 0 -5px 8px #76501f66,
+    0 5px 12px #59463340;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: .3s;
+  appearance: none;
+  opacity: 1;
+  visibility: visible;
+  transition: transform .3s ease, opacity .5s ease;
+}
+
+.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.wax-seal svg {
+  display: block;
+  width: 62px;
+  height: 62px;
+  fill: none;
+  stroke: #fff0d4;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .wax-seal:hover {
