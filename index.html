@@ -1369,13 +1369,12 @@ button, input, textarea { font: inherit; }
     <p>06.12.2026</p>
   </div>
 </div>
-      <button type="button" class="wax-seal" id="openSeal"
-  aria-label="Բացել հրավերը՝ սեղմելով կնիքին"
-  onclick="openInvitation()">
+    <button type="button" class="wax-seal" id="openSeal"
+  aria-label="Բացել հրավերը՝ սեղմելով կնիքին">
 
-       <img src="./wax-seal-swans.png" alt="Two swans wax seal">
+  <img src="./wax-seal-swans.png" alt="Two swans wax seal">
 
-      </button>
+</button>
     </div>
   </div>
 
@@ -1689,7 +1688,7 @@ function openInvitation() {
 
   }, 2100);
 }
-seal.addEventListener("click", openInvitation);
+seal.onclick = openInvitation;
 
 /* MUSIC BUTTON */
 
