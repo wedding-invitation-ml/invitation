@@ -437,6 +437,38 @@ button, input, textarea { font: inherit; }
   max-width: 650px;
   text-align: center;
 }
+  /* CALENDAR BACKGROUND PHOTO */
+
+.calendar-section {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 280px;
+}
+
+.calendar-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 520px;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(251, 250, 246, 1) 0%,
+      rgba(251, 250, 246, .88) 25%,
+      rgba(251, 250, 246, .55) 55%,
+      rgba(251, 250, 246, .25) 100%
+    ),
+    url("./polaroid.jpg");
+
+  background-size: 100% 100%, cover;
+  background-position: center, center 58%;
+  background-repeat: no-repeat;
+}
 
 .calendar {
   max-width: 550px;
