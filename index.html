@@ -1370,7 +1370,8 @@ button, input, textarea { font: inherit; }
   </div>
 </div>
       <button type="button" class="wax-seal" id="openSeal"
-        aria-label="Բացել հրավերը՝ սեղմելով կնիքին">
+  aria-label="Բացել հրավերը՝ սեղմելով կնիքին"
+  onclick="openInvitation()">
 
        <img src="./wax-seal-swans.png" alt="Two swans wax seal">
 
@@ -1688,7 +1689,6 @@ function openInvitation() {
 
   }, 2100);
 }
-
 seal.addEventListener("click", openInvitation);
 
 /* MUSIC BUTTON */
