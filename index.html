@@ -123,42 +123,65 @@ button, input, textarea { font: inherit; }
   color: var(--brown-light);
 }
 
+
 .envelope-stage {
-  width: min(570px, 88vw);
-  height: 380px;
+  width: min(900px, 88vw);
+  height: 500px;
   position: relative;
-  perspective: 1200px;
+  perspective: 1400px;
 }
 
 .envelope {
   position: absolute;
-  bottom: 20px;
+  bottom: 35px;
   width: 100%;
-  height: 255px;
-  filter: drop-shadow(0 18px 22px #59463320);
+  height: 420px;
+  filter: drop-shadow(0 18px 22px #59463325);
 }
 
-
+/* Հետևի թղթե հիմք */
 .envelope-back {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    radial-gradient(ellipse at 25% 20%, #ffffffaa, transparent 65%),
-    linear-gradient(145deg, #fffefa, #f7f4ed);
-  border: 1px solid #e8e0d3;
+  background-color: #fbfaf6;
+  background-image:
+    repeating-linear-gradient(
+      8deg,
+      transparent 0,
+      #b9a88a08 1px,
+      transparent 3px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      95deg,
+      transparent 0,
+      #ffffff70 1px,
+      transparent 2px,
+      transparent 5px
+    ),
+    linear-gradient(145deg, #fffefa, #f4f0e8);
+  border: 1px solid #e9e1d5;
   box-shadow:
-    inset 0 1px 5px #ffffffaa,
-    0 5px 14px #8e795020;
+    inset 0 1px 8px #ffffffaa,
+    0 8px 18px #59463318;
 }
 
+/* Առջևի թղթե ծալքեր */
 .envelope-pocket {
   position: absolute;
   inset: 0;
   z-index: 2;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 20%, #ffffff99, transparent 70%),
-    linear-gradient(145deg, #fffefa, #f4f0e8);
+    repeating-linear-gradient(
+      12deg,
+      transparent 0,
+      #b9a88a07 1px,
+      transparent 3px,
+      transparent 6px
+    ),
+    linear-gradient(145deg, #fffefa, #f5f1e9);
   clip-path: polygon(
     0 0,
     50% 65%,
@@ -166,10 +189,41 @@ button, input, textarea { font: inherit; }
     100% 100%,
     0 100%
   );
-  border: 1px solid #e8e0d3;
-  filter: drop-shadow(0 -2px 4px #8e795025);
+  border: 1px solid #e9e1d5;
+  filter: drop-shadow(0 2px 4px #59463320);
 }
 
+/* Ձախ կողային ծալք */
+.envelope-pocket::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    #fffefa,
+    #eee8dc 75%,
+    #fffefa
+  );
+  clip-path: polygon(0 0, 50% 65%, 0 100%);
+  border-right: 1px solid #e5dccd;
+}
+
+/* Աջ կողային ծալք */
+.envelope-pocket::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    240deg,
+    #fffefa,
+    #eee8dc 75%,
+    #fffefa
+  );
+  clip-path: polygon(100% 0, 50% 65%, 100% 100%);
+  border-left: 1px solid #e5dccd;
+}
+
+/* Վերին բացվող փեղկ */
 .envelope-flap {
   position: absolute;
   inset: 0 0 auto;
@@ -186,10 +240,16 @@ button, input, textarea { font: inherit; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 20%, #ffffffaa, transparent 75%),
-    linear-gradient(160deg, #fffefa, #f6f2ea);
+    repeating-linear-gradient(
+      10deg,
+      transparent 0,
+      #b9a88a08 1px,
+      transparent 3px,
+      transparent 6px
+    ),
+    linear-gradient(160deg, #fffefa, #f5f1e9);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  filter: drop-shadow(0 3px 4px #8e795040);
+  filter: drop-shadow(0 4px 5px #59463335);
   border: 1px solid #eee5d8;
 }
 
@@ -205,7 +265,7 @@ button, input, textarea { font: inherit; }
 
 .envelope-flap-content h1 {
   font-family: "Arian Grqi", serif;
-  font-size: clamp(23px, 5vw, 34px);
+  font-size: clamp(23px, 5vw, 38px);
   font-weight: normal;
   margin: 0 0 10px;
 }
@@ -218,13 +278,13 @@ button, input, textarea { font: inherit; }
 
 .envelope-flap-content p {
   font-family: "Manrope", sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .3em;
   color: #897762;
   margin-top: 8px;
 }
 
-
+/* Կարապներով մոմե կնիք */
 .wax-seal {
   position: absolute;
   z-index: 10;
@@ -234,7 +294,6 @@ button, input, textarea { font: inherit; }
   width: 76px;
   height: 76px;
   border: none;
-  border-radius: 48% 52% 50% 48%;
   background: transparent;
   box-shadow: none;
   cursor: pointer;
@@ -249,6 +308,14 @@ button, input, textarea { font: inherit; }
 .wax-seal:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
+
+.wax-seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 
 .wax-seal svg {
   display: block;
