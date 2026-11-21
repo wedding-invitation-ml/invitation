@@ -1155,8 +1155,25 @@ button, input, textarea { font: inherit; }
     <div class="route-layout">
 
       <svg class="route-line" viewBox="0 0 260 700" preserveAspectRatio="none">
-        <path class="route-path"
-          d="M130 20 C20 85 25 155 130 210 S235 330 130 385 S25 505 130 560 S235 640 130 680"/>
+        <path class="route-path" id="routeMotionPath"
+  d="M130 20 C20 85 25 155 130 210 S235 330 130 385 S25 505 130 560 S235 640 130 680"/>
+
+<text
+  font-size="25"
+  fill="#b18b52"
+  text-anchor="middle"
+  dominant-baseline="middle"
+  font-family="Georgia, serif">
+  ♡
+  <animateMotion
+    dur="9s"
+    repeatCount="indefinite"
+    keyPoints="0;1;0"
+    keyTimes="0;0.5;1"
+    calcMode="linear">
+    <mpath href="#routeMotionPath"/>
+  </animateMotion>
+</text>
       </svg>
 
       <article class="stop church">
