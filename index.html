@@ -180,34 +180,46 @@ button, input, textarea { font: inherit; }
 }
 
 
-/* Ձախ կողային ծալք */
+/* Ձախ կողային թղթե ծալք */
 .envelope-pocket::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    #fffefa,
-    #eee8dc 75%,
-    #fffefa
-  );
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 254, 250, .35),
+      rgba(238, 232, 220, .42) 75%,
+      rgba(255, 254, 250, .3)
+    ),
+    url("./paper-texture.png");
+  background-size: cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
   clip-path: polygon(0 0, 50% 65%, 0 100%);
   border-right: 1px solid #e5dccd;
+  filter: drop-shadow(2px 0 3px #8e795020);
 }
 
-/* Աջ կողային ծալք */
+/* Աջ կողային թղթե ծալք */
 .envelope-pocket::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    240deg,
-    #fffefa,
-    #eee8dc 75%,
-    #fffefa
-  );
+  background:
+    linear-gradient(
+      240deg,
+      rgba(255, 254, 250, .35),
+      rgba(238, 232, 220, .42) 75%,
+      rgba(255, 254, 250, .3)
+    ),
+    url("./paper-texture.png");
+  background-size: cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
   clip-path: polygon(100% 0, 50% 65%, 100% 100%);
   border-left: 1px solid #e5dccd;
+  filter: drop-shadow(-2px 0 3px #8e795020);
 }
 
 /* Վերին բացվող փեղկ */
