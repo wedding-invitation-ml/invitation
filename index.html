@@ -148,7 +148,8 @@ button, input, textarea { font: inherit; }
 .envelope-pocket {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #fffefa, #f3f0e8);
+  z-index: 2;
+  background: linear-gradient(145deg, #fffefa, #f8f7f2);
   clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
   border: 1px solid #e9e1d3;
 }
@@ -168,7 +169,7 @@ button, input, textarea { font: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #fffefa, #f8f6f0);
+  background: linear-gradient(160deg, #fffefa, #f8f7f2);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   border: 1px solid #eee8dc;
 }
@@ -203,7 +204,6 @@ button, input, textarea { font: inherit; }
   color: #897762;
   margin-top: 8px;
 }
-}
 
 .wax-seal {
   position: absolute;
@@ -215,16 +215,10 @@ button, input, textarea { font: inherit; }
   height: 82px;
   border: 1px solid #d6b778;
   border-radius: 48% 52% 50% 48%;
-  background:
-    radial-gradient(circle at 32% 25%,
-      #f0d49e 0%,
-      #d7b16d 35%,
-      #b48746 72%,
-      #95652f 100%);
-  box-shadow:
-    inset 0 2px 5px #fff9,
-    inset 0 -5px 8px #76501f66,
-    0 5px 12px #59463340;
+  background: radial-gradient(circle at 32% 25%, #f0d49e, #d7b16d 35%, #b48746 72%, #95652f);
+  box-shadow: inset 0 2px 5px #fff9,
+              inset 0 -5px 8px #76501f66,
+              0 5px 12px #59463340;
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -244,19 +238,6 @@ button, input, textarea { font: inherit; }
   height: 62px;
   fill: none;
   stroke: #fff0d4;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.wax-seal:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.wax-seal svg {
-  width: 65px;
-  fill: none;
-  stroke: #f8e8c9;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
