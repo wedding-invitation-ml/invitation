@@ -157,11 +157,52 @@ button, input, textarea { font: inherit; }
   position: absolute;
   inset: 0 0 auto;
   height: 70%;
-  background: linear-gradient(160deg, #fffefa, #f1ede4);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: transparent;
+  clip-path: none;
   transform-origin: top;
   transition: transform 1.2s ease;
   z-index: 4;
+}
+
+.envelope-flap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #fffefa, #f8f6f0);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border: 1px solid #eee8dc;
+}
+
+.envelope-flap-content {
+  position: absolute;
+  z-index: 2;
+  top: 18%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #594633;
+}
+
+.envelope-flap-content h1 {
+  font-family: "Arian Grqi", serif;
+  font-size: clamp(23px, 5vw, 34px);
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+.flap-ornament {
+  color: #b18b52;
+  font-size: 19px;
+  margin: 5px 0;
+}
+
+.envelope-flap-content p {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  letter-spacing: .3em;
+  color: #897762;
+  margin-top: 8px;
+}
 }
 
 .wax-seal {
