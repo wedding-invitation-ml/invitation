@@ -1167,14 +1167,21 @@ button, input, textarea { font: inherit; }
   dominant-baseline="middle"
   font-family="Georgia, serif">
   ♥
+  <animate
+  attributeName="font-size"
+  values="23;27;23"
+  dur="1.4s"
+  repeatCount="indefinite"/>
   <animateMotion
-    dur="9s"
-    repeatCount="indefinite"
-    keyPoints="0;1;0"
-    keyTimes="0;0.5;1"
-    calcMode="linear">
-    <mpath href="#routeMotionPath"/>
-  </animateMotion>
+  dur="14s"
+  repeatCount="indefinite"
+  keyPoints="0;1;0"
+  keyTimes="0;0.5;1"
+  calcMode="spline"
+  keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
+  rotate="auto">
+  <mpath href="#routeMotionPath"/>
+</animateMotion>
 </text>
       </svg>
 
