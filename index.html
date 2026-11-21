@@ -1179,9 +1179,34 @@ button, input, textarea { font: inherit; }
   keyTimes="0;0.5;1"
   calcMode="spline"
   keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
-  rotate="auto">
+  rotate="0">
   <mpath href="#routeMotionPath"/>
 </animateMotion>
+  <g>
+  <animateMotion
+    dur="10s"
+    repeatCount="indefinite"
+    rotate="0"
+    keyPoints="0;0;1;1;0;0"
+    keyTimes="0;0.12;0.48;0.60;0.96;1"
+    calcMode="linear">
+    <mpath href="#routeMotionPath"/>
+  </animateMotion>
+
+  <g>
+    <!-- ՑԱՏԿԻ ԱՆԻՄԱՑԻԱՆ ԱՅՍՏԵՂ -->
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0 0; 0 -12; 0 0"
+      dur="0.65s"
+      repeatCount="indefinite"/>
+
+    <text font-size="25" fill="#9b7545"
+      text-anchor="middle"
+      dominant-baseline="middle">♥</text>
+  </g>
+</g>
 </text>
       </svg>
 
