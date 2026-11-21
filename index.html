@@ -1048,6 +1048,114 @@ button, input, textarea { font: inherit; }
   box-shadow: none !important;
   background: transparent !important;
 }
+
+/* WEDDING PROGRAM — NEW DESIGN */
+
+.route-section .section-title {
+  margin-bottom: 55px;
+}
+
+.route-section .route-layout {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.route-section .stop {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 35px;
+  align-items: center;
+  min-height: 0;
+  margin-bottom: 65px;
+}
+
+.route-section .church .stop-copy {
+  grid-column: 1;
+  text-align: right;
+}
+
+.route-section .church .stop-art {
+  grid-column: 2;
+}
+
+.route-section .restaurant .stop-art {
+  grid-column: 1;
+}
+
+.route-section .restaurant .stop-copy {
+  grid-column: 2;
+  text-align: left;
+}
+
+.route-section .stop-art {
+  width: 100%;
+  max-width: 440px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.route-section .stop-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.route-section .stop-time {
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.route-section .stop-copy h3 {
+  font-size: 21px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.route-section .stop-copy p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.route-section .map-link {
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .route-section .section-title {
+    margin-bottom: 35px;
+  }
+
+  .route-section .stop {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 12px;
+    margin-bottom: 45px;
+  }
+
+  .route-section .stop-time {
+    font-size: 23px;
+  }
+
+  .route-section .stop-copy h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 7px 0;
+  }
+
+  .route-section .stop-copy p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .route-section .map-link {
+    font-size: 10px;
+  }
+}
+
 </style>
 </head>
 
@@ -1167,75 +1275,64 @@ button, input, textarea { font: inherit; }
 
   <!-- WEDDING DAY ROUTE -->
 
-  <section class="section route-section" id="routeSection">
-    <p class="eyebrow">ՄԵՐ ՀԱՐՍԱՆԵԿԱՆ ՕՐԸ</p>
-    <h2 class="section-title">Մեր օրվա ճանապարհը</h2>
-
-    <div class="route-layout">
-
-      <svg class="route-line" viewBox="0 0 260 700" preserveAspectRatio="none">
-        <path class="route-path" id="routeMotionPath"
-  d="M130 20 C20 85 25 155 130 210 S235 330 130 385 S25 465 130 500"/>
-
-<g fill="#b18b52" stroke="none">
-
-  <!-- Եկեղեցու կանգառ -->
-  <path
-    d="M0 12 C-5 7 -18 0 -18 -9
-       C-18 -22 -3 -25 0 -12
-       C3 -25 18 -22 18 -9
-       C18 0 5 7 0 12Z"
-    transform="translate(130 20) scale(2.8 0.5)"/>
-
-  <!-- Ռեստորանի կանգառ -->
-  <path
-    d="M0 12 C-5 7 -18 0 -18 -9
-       C-18 -22 -3 -25 0 -12
-       C3 -25 18 -22 18 -9
-       C18 0 5 7 0 12Z"
-    transform="translate(130 500) scale(2.8 0.5)"/>
-
-</g>
-      </svg>
-
-      <article class="stop church">
-        <div class="stop-art">
-          <img src="church-sketch.jpg" alt="Սուրբ Հովհաննես եկեղեցի">
-        </div>
-
-        <div class="stop-copy">
-          <span class="stop-time">14:00</span>
-          <h3>Պսակադրություն</h3>
-          <p>Սուրբ Հովհաննես եկեղեցի</p>
-          <p>Մեղրի, Փոքր թաղ</p>
-          <a class="map-link"
-   href="https://www.google.com/maps/search/?api=1&query=V6WR%2B9W7%2C+Meghri+3401"
-   target="_blank" rel="noopener">Քարտեզ <span class="arrow-icon"></span></a>
-        </div>
-      </article>
-
-      <div class="route-middle">
   
-</div>
+<!-- WEDDING DAY PROGRAM -->
 
-      <article class="stop restaurant">
-        <div class="stop-art">
-          <img src="restaurant-sketch.jpg" alt="Մարիշոկ ռեստորան">
-        </div>
+<section class="section route-section" id="routeSection">
 
-        <div class="stop-copy">
-          <span class="stop-time">17:00</span>
-          <h3>Հարսանեկան խնջույք</h3>
-          <p>«Մարիշոկ» ռեստորան</p>
-          <p>Ագարակ</p>
-          <a class="map-link"
-             href="https://www.google.com/maps/search/?api=1&query=Մարիշոկ+ռեստորան+Ագարակ"
-             target="_blank" rel="noopener">Քարտեզ <span class="arrow-icon"></span></a>
-        </div>
-      </article>
+  <h2 class="section-title">Մեր օրվա ծրագիրը</h2>
 
-    </div>
-  </section>
+  <div class="route-layout">
+
+    <!-- CHURCH -->
+    <article class="stop church">
+
+      <div class="stop-copy">
+        <span class="stop-time">14:00</span>
+        <h3>Պսակադրություն</h3>
+        <p>Սուրբ Հովհաննես եկեղեցի</p>
+        <p>Մեղրի, Փոքր թաղ</p>
+
+        <a class="map-link"
+           href="https://www.google.com/maps/search/?api=1&query=V6WR%2B9W7%2C+Meghri+Monastery%2C+Meghri+3401"
+           target="_blank" rel="noopener">
+          Քարտեզ <span class="arrow-icon"></span>
+        </a>
+      </div>
+
+      <div class="stop-art">
+        <img src="church-sketch.jpg"
+             alt="Սուրբ Հովհաննես եկեղեցի">
+      </div>
+
+    </article>
+
+    <!-- RESTAURANT -->
+    <article class="stop restaurant">
+
+      <div class="stop-art">
+        <img src="restaurant-sketch.jpg"
+             alt="Մարիշոկ ռեստորան">
+      </div>
+
+      <div class="stop-copy">
+        <span class="stop-time">17:00</span>
+        <h3>Հարսանեկան խնջույք</h3>
+        <p>«Մարիշոկ» ռեստորան</p>
+        <p>Ագարակ</p>
+
+        <a class="map-link"
+           href="https://www.google.com/maps/search/?api=1&query=Մարիշոկ+ռեստորան+Ագարակ"
+           target="_blank" rel="noopener">
+          Քարտեզ <span class="arrow-icon"></span>
+        </a>
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
 
   <!-- POLAROID PHOTOS -->
 
