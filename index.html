@@ -138,16 +138,37 @@ button, input, textarea { font: inherit; }
   filter: drop-shadow(0 18px 22px #59463320);
 }
 
+
 .envelope-back {
   position: absolute;
   inset: 0;
-  background: #f4f1e9;
-  border: 1px solid #e5ddcf;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 25% 20%, #ffffffaa, transparent 65%),
+    linear-gradient(145deg, #fffefa, #f7f4ed);
+  border: 1px solid #e8e0d3;
+  box-shadow:
+    inset 0 1px 5px #ffffffaa,
+    0 5px 14px #8e795020;
 }
 
-background: linear-gradient(145deg, #fffefa, #eee9df);
-border: 1px solid #e5dccd;
-filter: drop-shadow(0 -2px 3px #9b826044);
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse at 50% 20%, #ffffff99, transparent 70%),
+    linear-gradient(145deg, #fffefa, #f4f0e8);
+  clip-path: polygon(
+    0 0,
+    50% 65%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  border: 1px solid #e8e0d3;
+  filter: drop-shadow(0 -2px 4px #8e795025);
+}
 
 .envelope-flap {
   position: absolute;
@@ -164,10 +185,12 @@ filter: drop-shadow(0 -2px 3px #9b826044);
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #fffefa 20%, #f3efe6 100%);
-filter: drop-shadow(0 3px 3px #9b826044);
+  background:
+    radial-gradient(ellipse at 50% 20%, #ffffffaa, transparent 75%),
+    linear-gradient(160deg, #fffefa, #f6f2ea);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  border: 1px solid #eee8dc;
+  filter: drop-shadow(0 3px 4px #8e795040);
+  border: 1px solid #eee5d8;
 }
 
 .envelope-flap-content {
@@ -200,6 +223,7 @@ filter: drop-shadow(0 3px 3px #9b826044);
   color: #897762;
   margin-top: 8px;
 }
+
 
 .wax-seal {
   position: absolute;
