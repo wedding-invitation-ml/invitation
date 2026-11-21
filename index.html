@@ -1360,7 +1360,45 @@ button, input, textarea { font: inherit; }
     font-size: 10px;
   }
 }
+/* THREE POLAROID GALLERY */
 
+.polaroid-gallery {
+  max-width: 850px;
+  width: calc(100% - 40px);
+  margin: 20px auto 65px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.gallery-polaroid {
+  margin: 0;
+  padding: 9px 9px 25px;
+  background: #fffefa;
+  border: 1px solid #eee9df;
+  box-shadow: 0 8px 25px #43372220;
+}
+
+.gallery-polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+@media (max-width: 650px) {
+  .polaroid-gallery {
+    width: calc(100% - 34px);
+    gap: 10px;
+    margin: 10px auto 45px;
+  }
+
+  .gallery-polaroid {
+    padding: 5px 5px 14px;
+  }
+}
 </style>
 </head>
 
@@ -1558,7 +1596,24 @@ button, input, textarea { font: inherit; }
     </p>
 
   </section>
-<!-- GUEST NOTE -->
+<!-- THREE POLAROID PHOTOS -->
+
+<section class="polaroid-gallery">
+
+  <figure class="gallery-polaroid">
+    <img src="polaroid-1.jpg" alt="Մեր լուսանկարը">
+  </figure>
+
+  <figure class="gallery-polaroid">
+    <img src="polaroid-2.jpg" alt="Մեր լուսանկարը">
+  </figure>
+
+  <figure class="gallery-polaroid">
+    <img src="polaroid-3.jpg" alt="Մեր լուսանկարը">
+  </figure>
+
+</section>
+  <!-- GUEST NOTE -->
 
 <section class="section guest-note-section">
 
