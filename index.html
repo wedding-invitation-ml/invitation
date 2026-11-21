@@ -1379,7 +1379,6 @@ button, input, textarea { font: inherit; }
   </div>
 
   <p class="tap-hint">Հրավերը տեսնելու համար՝ սեղմեք կնիքի վրա</p>
-  <button class="skip-intro" id="skipIntro">Անցնել հրավերին</button>
 
 </section>
 
@@ -1661,7 +1660,6 @@ button, input, textarea { font: inherit; }
 const intro = document.getElementById("intro");
 const invitation = document.getElementById("invitation");
 const seal = document.getElementById("openSeal");
-const skip = document.getElementById("skipIntro");
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 
@@ -1692,8 +1690,6 @@ function openInvitation() {
 }
 
 seal.addEventListener("click", openInvitation);
-skip.addEventListener("click", openInvitation);
-
 
 /* MUSIC BUTTON */
 
